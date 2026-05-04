@@ -62,5 +62,5 @@ tmp/
 temp/
 frontend/.env*
 backend/.env*
-docs/docs.md
-docs/nginx
+
+docs/
