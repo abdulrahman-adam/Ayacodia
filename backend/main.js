@@ -46,10 +46,10 @@ app.post(
 
 // Add all versions of your domain here
 const allowedOrigins = [
-  'https://wehda.fr',
-  'https://www.wehda.fr',
-  'https://api.wehda.fr', // Add this!
-  'https://db.wehda.fr',   // Add this!
+  'https://ayacodia.com',
+  'https://www.ayacodia.com',
+  'https://api.ayacodia.com', // Add this!
+  'https://db.ayacodia.com',   // Add this!
   'http://localhost:5173',
   'http://localhost:5174',
   'http://109.176.199.234:5173'
