@@ -18,6 +18,7 @@ import contactRouter from "./routes/contactRoute.js";
 import { stripeWebhooks } from "./controllers/orderController.js";
 import hourRouter from "./routes/hourRoute.js";
 import Hour from "./models/Hour.js";
+import partenaireRouter from "./routes/partenaireRoute.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -113,6 +114,7 @@ app.use('/api/cart', cartRouter);
 app.use('/api/address', addressRouter);
 app.use('/api/order', orderRouter);
 app.use('/api/contact', contactRouter);
+app.use('/api/partenaire', partenaireRouter);
 app.use('/api/hours', hourRouter);
 
 app.get('/', (req, res) => res.send("API IS WORKING NOW"));

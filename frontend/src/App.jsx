@@ -38,6 +38,8 @@ import Shipping from "./pages/Shipping/Shipping";
 import Promotions from "./pages/promotions/Promotions";
 import NewArrivals from "./pages/newArrivals/NewArrivals";
 import AdminHours from "./pages/admin/AdminHours";
+import Partenaire from "./pages/partenaire/Partenaire";
+import PartenaireList from "./pages/admin/PartenaireList";
 
 
 const App = () => {
@@ -112,6 +114,7 @@ const App = () => {
         {/* ================= PUBLIC ROUTES ================= */}
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/partenaire" element={<Partenaire />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
         <Route path="/about" element={<About />} />
@@ -159,6 +162,7 @@ const App = () => {
           <Route path="category-list" element={<ListCategory />} />
           <Route path="add-category" element={<AddCategory />} />
           <Route path="all-contact" element={<ContactList />} />
+          <Route path="all-partenaire" element={<PartenaireList />} />
           <Route path="orders" element={<Orders />} />
           <Route path="hours" element={<AdminHours />} />
         </Route>

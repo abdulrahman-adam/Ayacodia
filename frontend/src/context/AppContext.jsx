@@ -19,7 +19,7 @@ export const AppContextProvider = ({ children }) => {
   // --- State ---
   // const [user, setUser] = useState(null); 
   // To this:
-const [user, setUser] = useState(undefined);
+  const [user, setUser] = useState(undefined);
   const [adminData, setAdminData] = useState(null); 
   const [isSeller, setIsSeller] = useState(null);
   const [orders, setOrders] = useState([]); 
@@ -30,6 +30,8 @@ const [user, setUser] = useState(undefined);
   const [contacts, setContacts] = useState([]);
   
   const [searchQuery, setSearchQuery] = useState("");
+
+  const [partenaires, setPartenaires] = useState([]);
 
   // --- Opening Hours State ---
   const [shopStatus, setShopStatus] = useState({ 
@@ -287,19 +289,72 @@ const fetchUser = async () => {
   };
 
 
+  // --- PARTENAIRE LOGIC ---
+
+  // Function for companies to apply to be a partner
+  const createPartenaire = async (formData) => {
+    try {
+      // formData should contain: companyName, siret, profession, contactEmail, description
+      const { data } = await axios.post(`/api/partenaire/apply`, formData);
+      
+      if (data.success) {
+        toast.success(data.message);
+        return true; // Return true so the form component can clear its inputs
+      } else {
+        toast.error(data.message);
+        return false;
+      }
+    } catch (error) {
+      console.error("Application error:", error.message);
+      toast.error(error.response?.data?.message || "Failed to submit application");
+      return false;
+    }
+  };
+
+  const getAllPartenaires = async () => {
+    if (!isSeller) return;
+    try {
+      const { data } = await axios.get(`/api/partenaire/all`);
+      if (data.success) setPartenaires(data.data || []);
+    } catch (error) {
+      console.error("Partners error:", error.message);
+    }
+  };
 
 
-  // --- Fetch Opening Hours & Status ---
-  // const fetchShopStatus = async () => {
-  //   try {
-  //     const { data } = await axios.get("/api/hours/status");
-  //     // This will contain: { status, today, schedule }
-  //     setShopStatus(data);
-  //   } catch (error) {
-  //     console.error("Error fetching shop status:", error);
-  //   }
-  // };
+  const updatePartenaireStatus = async (id, newStatus) => {
+    try {
+      const { data } = await axios.put(`/api/partenaire/update-status/${id}`, { status: newStatus });
+      if (data.success) {
+        toast.success(data.message);
+        getAllPartenaires();
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
+
+  const deletePartenaire = async (id) => {
+    try {
+      const { data } = await axios.delete(`/api/partenaire/delete/${id}`);
+      if (data.success) {
+        toast.success(data.message);
+        getAllPartenaires();
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
+
+  // Automatically fetch data when the seller is authenticated
+  useEffect(() => {
+    if (isSeller) {
+      getAllContacts();
+      getAllPartenaires();
+    }
+  }, [isSeller]);
 
 // 2. Add this Helper Function inside AppContextProvider
 const calculateStatusLocally = (schedule) => {
@@ -391,6 +446,12 @@ const fetchShopStatus = async () => {
     fetchCategories, getCartCount, getCartAmount, updateCartItems, axios, searchQuery, setSearchQuery,clearCart, shopStatus, 
     fetchShopStatus, 
     updateShopHours,
+    partenaires,
+    createPartenaire,
+    setPartenaires,
+    getAllPartenaires,
+    updatePartenaireStatus,
+    deletePartenaire,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

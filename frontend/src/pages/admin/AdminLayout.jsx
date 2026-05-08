@@ -19,6 +19,7 @@ const AdminLayout = () => {
     { name: "Category List", path: "/admin/category-list", icon: assets.product_list_icon },
     { name: "Contact List", path: "/admin/all-contact", icon: assets.product_list_icon },
     { name: "Hours List", path: "/admin/hours", icon: assets.coin_icon },
+    { name: "Partenaire List", path: "/admin/all-partenaire", icon: assets.delivery_truck_icon },
   ];
 
   // --- 1. THE REFRESH PROTECTION ---
