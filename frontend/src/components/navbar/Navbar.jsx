@@ -11,7 +11,6 @@ const Navbar = () => {
   const {
     axios,
     user,
-    getCartCount,
     setUser,
     setShowUserLogin,
     navigate,
@@ -43,17 +42,17 @@ const Navbar = () => {
       {/* --- ELITE NAV BAR --- */}
       <nav className="flex items-center justify-between px-4 md:px-10 lg:px-16 py-4 h-[65px] border-b border-white/10 sticky top-0 z-[60] bg-white/80 backdrop-blur-xl transition-all duration-500 shadow-sm">
         
-        {/* --- LOGO: Scale-Up Effect --- */}
+        {/* --- LOGO --- */}
         <NavLink to="/" className="z-50 transform hover:scale-110 active:scale-95 transition-all duration-300">
           <img
             src={`${window.location.origin}/logo.png`}
             alt="logo"
-            className="w-28 md:w-32 object-contain filter drop-shadow-sm"
-            style={{ height: "60px", width: "70px" }}
+            className="object-cover filter drop-shadow-sm"
+            style={{ height: "60px", width: "230px"}}
           />
         </NavLink>
 
-        {/* --- DESKTOP NAVIGATION: Premium Underlines --- */}
+        {/* --- DESKTOP NAVIGATION --- */}
         <ul className="hidden sm:flex items-center gap-8 font-bold text-gray-600">
           {[
             { name: "Accueil", path: "/" },
@@ -74,7 +73,7 @@ const Navbar = () => {
             </NavLink>
           ))}
 
-          {/* Catégories Desktop: Modern Dropdown Style */}
+          {/* Catégories Desktop */}
           <div className="relative group flex items-center">
             <select
               onChange={(e) => {
@@ -94,10 +93,10 @@ const Navbar = () => {
           </div>
         </ul>
 
-        {/* --- ACTIONS: Iconic Polish --- */}
+        {/* --- ACTIONS --- */}
         <div className="flex items-center gap-4 md:gap-6">
           
-          {/* Search Bar: Expanding & Glow effect */}
+          {/* Search Bar */}
           <div className="hidden lg:flex items-center bg-gray-100/50 px-4 py-2 rounded-2xl border border-transparent focus-within:border-indigo-400 focus-within:bg-white focus-within:shadow-lg focus-within:shadow-indigo-100 transition-all duration-500 group">
             <input
               type="text"
@@ -112,32 +111,24 @@ const Navbar = () => {
             <img src={assets.search_icon} alt="search" className="w-4 h-4 opacity-40 group-focus-within:opacity-100 transition-opacity" />
           </div>
 
-          {/* Cart Icon: Floating Badge miracle */}
-          <div
-            onClick={() => navigate("/cart")}
-            className="relative cursor-pointer group p-2 hover:bg-indigo-50 rounded-full transition-all duration-300 active:scale-75"
-          >
-            <img src={assets.nav_cart_icon} alt="cart" className="w-6 opacity-80 group-hover:scale-110 group-hover:rotate-6 transition-transform" />
-            <span className="absolute -top-0.5 -right-0.5 text-[10px] font-bold text-white bg-red-500 w-4 h-4 rounded-full flex items-center justify-center shadow-lg shadow-red-200 animate-bounce">
-              {getCartCount ? getCartCount() : 0}
-            </span>
-          </div>
-
-          {/* Profile: Professional Pop-over */}
-          <div className="hidden sm:block">
+          {/* Profile & Login Logic: THE MIRACLE CLICK */}
+          <div className="flex items-center">
             {!user ? (
-              <button
+              /* If no user, clicking this icon opens the login popup directly */
+              <div 
                 onClick={() => setShowUserLogin(true)}
-                className="px-6 py-2.5 bg-indigo-600 text-white rounded-xl text-sm font-black shadow-xl shadow-indigo-100 hover:bg-indigo-700 hover:-translate-y-1 active:scale-95 transition-all cursor-pointer"
+                className="cursor-pointer group p-2 hover:bg-indigo-50 rounded-full transition-all duration-300 active:scale-75 flex items-center justify-center"
+                title="Connexion"
               >
-                Connexion
-              </button>
+                 <i className="bi bi-person-add text-2xl text-gray-700 opacity-80 group-hover:text-indigo-600 transition-all"></i>
+              </div>
             ) : (
+              /* If user exists, show profile image with dropdown menu */
               <div className="relative group">
                 <div className="w-10 h-10 rounded-full border-2 border-indigo-50 p-0.5 cursor-pointer group-hover:border-indigo-500 group-hover:shadow-lg transition-all duration-500">
                     <img src={assets.profile_icon} alt="profile" className="w-full h-full object-cover rounded-full" />
                 </div>
-                <div className="invisible group-hover:visible absolute right-0 top-full pt-3 w-48 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                <div className="invisible group-hover:visible absolute right-0 top-full pt-3 w-48 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 z-[70]">
                   <ul className="bg-white/90 backdrop-blur-lg shadow-2xl border border-gray-100 rounded-2xl py-3 text-sm overflow-hidden">
                     <li onClick={() => navigate("/my-orders")} className="px-5 py-2.5 hover:bg-indigo-600 hover:text-white cursor-pointer flex items-center gap-3 transition-colors">
                       <i className="bi bi-bag-heart"></i> Mes Commandes
@@ -151,7 +142,7 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Hamburger: Miracle Animated Icon */}
+          {/* Hamburger Mobile Menu */}
           <button 
             className="sm:hidden p-2 rounded-xl bg-gray-50 hover:bg-indigo-50 text-indigo-600 transition-all active:scale-90" 
             onClick={() => setOpen(true)}
@@ -161,7 +152,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* --- MIRACLE MOBILE SIDEBAR: Apple-style sheet --- */}
+      {/* --- MIRACLE MOBILE SIDEBAR --- */}
       <div className={`fixed inset-0 z-[100] transition-all duration-700 ${open ? "visible" : "invisible"}`}>
         <div 
           className={`absolute inset-0 bg-gray-900/40 backdrop-blur-md transition-opacity duration-700 ${open ? "opacity-100" : "opacity-0"}`} 
@@ -199,30 +190,13 @@ const Navbar = () => {
 
             <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-2"></div>
 
-            <div className="flex flex-col gap-4 animate-miracleIn" style={{ animationDelay: '350ms' }}>
-              <p className="text-[11px] text-gray-400 uppercase font-black tracking-[3px] ml-2">Explorer la collection</p>
-              <select
-                onChange={(e) => {
-                  const value = e.target.value;
-                  value ? navigate(`/products/${value}`) : navigate("/products");
-                  setOpen(false);
-                }}
-                className="p-4 bg-gray-100 rounded-2xl outline-none border-2 border-transparent focus:border-indigo-500 font-bold text-gray-700 transition-all"
-              >
-                <option value="">Toutes les catégories</option>
-                {categories?.filter((cat) => cat.parentId === null).map((cat, index) => (
-                  <option key={index} value={cat.path}>{cat.text}</option>
-                ))}
-              </select>
-            </div>
-
             <div className="mt-auto pt-10 flex flex-col gap-4 animate-miracleIn" style={{ animationDelay: '450ms' }}>
               {!user ? (
                 <button
                   onClick={() => { setShowUserLogin(true); setOpen(false); }}
                   className="w-full py-5 bg-indigo-600 text-white rounded-2xl font-black text-lg shadow-2xl shadow-indigo-200 active:scale-95 transition-all"
                 >
-                  Démarrer l'aventure
+                  Connexion / S'inscrire
                 </button>
               ) : (
                 <>
