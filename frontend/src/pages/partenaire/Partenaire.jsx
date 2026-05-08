@@ -62,159 +62,143 @@ const Partenaire = () => {
   };
 
   return (
-    <div 
-      style={{ margin: '1px auto' }}
-      className="max-w-[1440px] px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 rounded-3xl md:rounded-[2.5rem] py-8 md:py-16 overflow-hidden relative shadow-2xl bg-[#020617]"
-    >
-      {/* BACKGROUND MAGIC SHAPES */}
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-200/20 blur-[120px] rounded-full animate-pulse"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-violet-200/20 blur-[120px] rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+    <div className="bg-[#020617] text-white overflow-hidden">
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start relative z-10">
-        
-        {/* LEFT SECTION - TEXT & BENEFITS */}
-        <div className="space-y-8 md:space-y-12 animate-fadeInLeft">
-          <div className="text-center lg:text-left transition-all duration-700">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6 tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 leading-tight hover:scale-[1.02] transition-transform cursor-default">
-              Devenir Partenaire
-            </h2>
-            <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-md mx-auto lg:mx-0">
-              Rejoignez notre réseau et développez votre activité. Nous recherchons des partenaires passionnés pour une collaboration <span className="text-indigo-600 font-bold underline decoration-indigo-200 underline-offset-4">durable</span>.
-            </p>
-          </div>
+  {/* HERO SECTION */}
+  <section className="relative py-24 sm:py-32 overflow-hidden">
 
-          {/* Responsive Benefits Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-            {[
-              { icon: "bi-graph-up-arrow", title: "Croissance", desc: "Boostez votre visibilité", delay: "0.1s" },
-              { icon: "bi-shield-check", title: "Fiabilité", desc: "Paiements sécurisés", delay: "0.2s" },
-              { icon: "bi-people", title: "Support", desc: "Équipe dédiée 7j/7", delay: "0.3s" },
-              { icon: "bi-lightning-charge", title: "Rapidité", desc: "Activation en 48h", delay: "0.4s" }
-            ].map((item, index) => (
-              <div 
-                key={index} 
-                className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl md:rounded-3xl border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group animate-float"
-                style={{ animationDelay: item.delay }}
-              >
-                <div style={{ marginTop: '1px', marginBottom: '1px', marginLeft: 'auto', marginRight: 'auto' }}
-                 className="text-center w-12 h-12 flex items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 mb-4 group-hover:bg-indigo-600 group-hover:text-white group-hover:rotate-[360deg] transition-all duration-700">
-                  <i className={`bi ${item.icon} text-xl`}></i>
-                </div>
-                <h3 className="font-bold text-gray-800 text-lg">{item.title}</h3>
-                <p className="text-sm text-gray-500 mt-1">{item.desc}</p>
+    {/* Background effects */}
+    <div className="absolute inset-0">
+      <div className="absolute top-[-120px] left-[-120px] w-[400px] h-[400px] bg-indigo-600/20 blur-[140px] rounded-full animate-pulse"></div>
+      <div className="absolute bottom-[-180px] right-[-120px] w-[500px] h-[500px] bg-blue-500/10 blur-[160px] rounded-full animate-pulse delay-1000"></div>
+
+      <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+    </div>
+
+    {/* TITLE */}
+    <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 text-center">
+      
+      <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-indigo-300 text-xs sm:text-sm font-semibold tracking-widest uppercase">
+        <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+        Partenariat
+      </div>
+
+      <h1 className="mt-8 text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
+        Devenir
+        <span className="block bg-gradient-to-r from-indigo-400 via-blue-400 to-violet-400 bg-clip-text text-transparent">
+          partenaire
+        </span>
+      </h1>
+
+      <p className="mt-8 text-gray-400 text-lg sm:text-xl max-w-3xl mx-auto">
+        Rejoignez notre réseau et développez votre activité avec une collaboration moderne, fiable et durable.
+      </p>
+    </div>
+  </section>
+
+  {/* CONTENT */}
+  <section className="pb-24">
+    <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+      {/* LEFT - BENEFITS */}
+      <div className="space-y-8">
+
+        <h2 className="text-3xl sm:text-4xl font-black">
+          Pourquoi nous rejoindre ?
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+          {[
+            { icon: "bi-graph-up-arrow", title: "Croissance", desc: "Boost visibilité" },
+            { icon: "bi-shield-check", title: "Sécurité", desc: "Paiements fiables" },
+            { icon: "bi-people", title: "Support", desc: "Équipe dédiée" },
+            { icon: "bi-lightning-charge", title: "Rapidité", desc: "Activation rapide" }
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="text-center group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-6 hover:-translate-y-2 transition-all duration-500"
+            >
+              <div className="mx-auto w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all">
+                <i className={`bi ${item.icon} text-xl`}></i>
               </div>
-            ))}
-          </div>
-        </div>
 
-        {/* RIGHT SECTION - APPLICATION FORM */}
-        <div className="bg-white/90 backdrop-blur-2xl p-6 sm:p-8 md:p-10 lg:p-12 rounded-3xl md:rounded-[3rem] border border-white shadow-2xl animate-slideUp relative group/form">
-          <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/5 to-transparent rounded-[3rem] pointer-events-none"></div>
-          
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10">
-            
-            <div className="space-y-2 group">
-              <label className="text-[10px] md:text-xs font-black uppercase tracking-widest text-indigo-500 ml-1 group-focus-within:text-indigo-700 transition-colors">
-                Nom de l'Entreprise
-              </label>
+              <h3 className="mt-5 text-xl font-bold">{item.title}</h3>
+              <p className="text-gray-400 text-sm mt-2">{item.desc}</p>
+            </div>
+          ))}
+
+        </div>
+      </div>
+
+      {/* RIGHT - FORM */}
+      <div className="relative">
+
+        <div className="relative overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-8 sm:p-10">
+
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-blue-500/10"></div>
+
+          <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
+
+            <input
+              type="text"
+              placeholder="Nom de l'entreprise"
+              className="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 outline-none"
+              onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
+              value={formData.companyName}
+            />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
               <input
                 type="text"
-                placeholder="Ex: Ayacodia"
-                className="w-full p-4 rounded-xl md:rounded-2xl border-none ring-1 ring-gray-100 focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none bg-gray-50/50 transition-all hover:ring-indigo-200"
-                onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                value={formData.companyName}
+                placeholder="SIRET"
+                className="p-4 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 outline-none"
+                onChange={(e) => setFormData({ ...formData, siret: e.target.value })}
+                value={formData.siret}
               />
-            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="space-y-2 group">
-                <label className="text-[10px] md:text-xs font-black uppercase tracking-widest text-indigo-500 ml-1">
-                  N° SIRET
-                </label>
-                <input
-                  type="text"
-                  maxLength="14"
-                  placeholder="14 chiffres"
-                  className="w-full p-4 rounded-xl md:rounded-2xl border-none ring-1 ring-gray-100 focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none bg-gray-50/50 transition-all"
-                  onChange={(e) => setFormData({ ...formData, siret: e.target.value })}
-                  value={formData.siret}
-                />
-              </div>
-
-              <div className="space-y-2 group">
-                <label className="text-[10px] md:text-xs font-black uppercase tracking-widest text-indigo-500 ml-1">
-                  Secteur d'Activité
-                </label>
-                <input
-                  type="text"
-                  placeholder="Ex: Logistique"
-                  className="w-full p-4 rounded-xl md:rounded-2xl border-none ring-1 ring-gray-100 focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none bg-gray-50/50 transition-all"
-                  onChange={(e) => setFormData({ ...formData, profession: e.target.value })}
-                  value={formData.profession}
-                />
-              </div>
-            </div>
-
-            <div className="space-y-2 group">
-              <label className="text-[10px] md:text-xs font-black uppercase tracking-widest text-indigo-500 ml-1">
-                Email Professionnel
-              </label>
               <input
-                type="email"
-                placeholder="contact@entreprise.com"
-                className="w-full p-4 rounded-xl md:rounded-2xl border-none ring-1 ring-gray-100 focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none bg-gray-50/50 transition-all"
-                onChange={(e) => setFormData({ ...formData, contactEmail: e.target.value })}
-                value={formData.contactEmail}
+                type="text"
+                placeholder="Secteur"
+                className="p-4 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 outline-none"
+                onChange={(e) => setFormData({ ...formData, profession: e.target.value })}
+                value={formData.profession}
               />
             </div>
 
-            <div className="space-y-2 group">
-              <label className="text-[10px] md:text-xs font-black uppercase tracking-widest text-indigo-500 ml-1">
-                Pourquoi nous rejoindre ?
-              </label>
-              <textarea
-                rows="4"
-                placeholder="Décrivez votre motivation..."
-                className="w-full p-4 rounded-xl md:rounded-2xl border-none ring-1 ring-gray-100 focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none bg-gray-50/50 transition-all resize-none"
-                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                value={formData.description}
-              ></textarea>
-            </div>
+            <input
+              type="email"
+              placeholder="Email professionnel"
+              className="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 outline-none"
+              onChange={(e) => setFormData({ ...formData, contactEmail: e.target.value })}
+              value={formData.contactEmail}
+            />
+
+            <textarea
+              rows="4"
+              placeholder="Pourquoi nous rejoindre ?"
+              className="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 outline-none resize-none"
+              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+              value={formData.description}
+            />
 
             <button
               type="submit"
-              className="mt-2 relative overflow-hidden bg-gradient-to-r from-indigo-600 to-violet-700 text-white py-4 md:py-5 rounded-xl md:rounded-2xl font-black text-sm md:text-lg tracking-widest hover:shadow-[0_20px_40px_rgba(79,70,229,0.4)] shadow-lg hover:-translate-y-1 transition-all active:scale-95 group/btn"
+              className="w-full py-4 rounded-xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 hover:scale-[1.02] transition-all"
             >
-              <div className="flex items-center justify-center gap-3 relative z-10">
-                <i className="bi bi-rocket-takeoff-fill group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"></i>
-                SOUMETTRE
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-indigo-600 opacity-0 group-hover/btn:opacity-100 transition-opacity"></div>
+              SOUMETTRE
             </button>
+
           </form>
         </div>
       </div>
 
-      <style jsx="true">{`
-        @keyframes slideUp {
-          from { opacity: 0; transform: translateY(40px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInLeft {
-          from { opacity: 0; transform: translateX(-40px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-        .animate-slideUp { animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        .animate-fadeInLeft { animation: fadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        .animate-float { animation: float 5s ease-in-out infinite; }
-      `}</style>
-
-      <PartenaireList />
     </div>
+  </section>
+
+  <PartenaireList />
+</div>
   );
 };
 

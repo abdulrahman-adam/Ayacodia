@@ -26,6 +26,7 @@ import AdminHours from "./pages/admin/AdminHours";
 import Partenaire from "./pages/partenaire/Partenaire";
 import PartenaireList from "./pages/admin/PartenaireList";
 import Services from "./pages/services/Services";
+import CookieConsent from "./components/consent/CookieConsent ";
 
 
 const App = () => {
@@ -96,6 +97,8 @@ const App = () => {
   />
 </div>
 
+        <CookieConsent />
+
       <Routes>
         {/* ================= PUBLIC ROUTES ================= */}
         <Route path="/" element={<Home />} />
@@ -116,6 +119,7 @@ const App = () => {
 
       
         <Route path="/loader" element={<Loading />} />
+
 
         {/* ================= ADMIN ROUTES ================= */}
         <Route
