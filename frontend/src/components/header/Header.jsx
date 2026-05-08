@@ -175,19 +175,24 @@ export default function Header() {
               >
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-indigo-500/10 to-blue-500/10 transition duration-700"></div>
 
-                <div className="relative z-10">
-                  <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition duration-500 mx-auto sm:mx-0">
-                    <i className={`bi ${service.icon} text-white text-2xl flex items-center justify-center leading-none`}></i>
-                  </div>
+                <div className="text-center relative z-10 flex flex-col items-center">
 
-                  <h3 className="mt-8 text-2xl font-black text-white text-center sm:text-left">
-                    {service.title}
-                  </h3>
+  {/* ICON */}
+  <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition duration-500">
+    <i className={`bi ${service.icon} text-white text-2xl leading-none`}></i>
+  </div>
 
-                  <p className="mt-5 text-gray-400 leading-relaxed text-center sm:text-left">
-                    {service.description}
-                  </p>
-                </div>
+  {/* TITLE */}
+  <h3 className="mt-8 text-2xl font-black text-white">
+    {service.title}
+  </h3>
+
+  {/* DESCRIPTION */}
+  <p className="mt-5 text-gray-400 leading-relaxed">
+    {service.description}
+  </p>
+
+</div>
               </div>
             ))}
           </div>
