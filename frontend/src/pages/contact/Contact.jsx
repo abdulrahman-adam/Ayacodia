@@ -12,40 +12,58 @@ const Contact = () => {
 
   const validateForm = () => {
     const { name, email, telephone, message } = formData;
+
     const nameRegex = /^[a-zA-ZÀ-ÿ]{2,}\s+[a-zA-ZÀ-ÿ]{2,}/;
-    const phoneRegex = /^[0-9+]{8,15}$/;
+    const phoneRegex = /^[0-9+ ]{8,15}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!nameRegex.test(name)) {
-      toast.error("Veuillez entrer votre Prénom et Nom.");
+      toast.error("Veuillez entrer votre prénom et nom.");
       return false;
     }
+
     if (!emailRegex.test(email)) {
-      toast.error("Email invalide.");
+      toast.error("Adresse email invalide.");
       return false;
     }
+
     if (!phoneRegex.test(telephone)) {
-      toast.error("Téléphone invalide.");
+      toast.error("Numéro de téléphone invalide.");
       return false;
     }
+
     if (message.length < 10) {
-      toast.error("Message trop court.");
+      toast.error("Votre message est trop court.");
       return false;
     }
+
     return true;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!validateForm()) return;
 
-    const loadingToast = toast.loading("Envoi en cours...");
+    const loadingToast = toast.loading("Envoi du message...");
+
     try {
-      const { data } = await axios.post("/api/contact/send", formData);
+      const { data } = await axios.post(
+        "/api/contact/send",
+        formData
+      );
+
       toast.dismiss(loadingToast);
+
       if (data.success) {
         toast.success(data.message);
-        setFormData({ name: "", email: "", telephone: "", message: "" });
+
+        setFormData({
+          name: "",
+          email: "",
+          telephone: "",
+          message: "",
+        });
       }
     } catch (error) {
       toast.dismiss(loadingToast);
@@ -54,155 +72,321 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-[1440px] mx-auto px-4 md:px-16 lg:px-24 xl:px-32 mb-20 bg-gradient-to-br from-gray-50 via-white to-indigo-50/40 rounded-[2.5rem] py-4 md:py-10 overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mt-4 transition-all duration-1000 ease-out translate-y-0 opacity-100">
-        
-        {/* LEFT SECTION - INFO & MAP */}
-        <div className="space-y-8 animate-fadeInLeft">
-          <div className="transform transition-all duration-700 hover:translate-x-1">
-            <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-6 tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-indigo-600">
-              Contactez-nous
-            </h2>
-            <p className="text-lg text-gray-500 leading-relaxed max-w-md">
-              Une question sur une commande ou un partenariat ? Nos experts vous
-              répondent sous <span className="text-indigo-600 font-bold">24h</span>.
-            </p>
+    <section className="relative overflow-hidden bg-[#020617] py-16 sm:py-24">
+      {/* BACKGROUND EFFECTS */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-[-150px] left-[-120px] w-[350px] h-[350px] bg-indigo-600/20 blur-[120px] rounded-full animate-pulse"></div>
+
+        <div className="absolute bottom-[-180px] right-[-100px] w-[450px] h-[450px] bg-blue-500/10 blur-[150px] rounded-full animate-pulse delay-1000"></div>
+
+        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+        {/* HEADER */}
+        <div className="text-center mb-16 animate-fadeUp">
+          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-indigo-300 text-xs sm:text-sm font-semibold tracking-widest uppercase">
+            <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+            AYACODIA • Agence Digitale
           </div>
 
-          <div className="space-y-5">
-            <a
-              href="tel:+33 7 66 42 20 95"
-              className="flex items-center gap-5 group w-fit p-2 -ml-2 rounded-2xl hover:bg-white hover:shadow-sm transition-all duration-300"
-            >
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-100 to-indigo-50 text-indigo-600 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-sm">
-                <i className="bi bi-telephone text-xl"></i>
-              </div>
-              <span className="text-lg font-semibold text-gray-700 group-hover:text-indigo-600 transition">
-                07 66 42 20 95
-              </span>
-            </a>
+          <h1 className="mt-8 text-4xl sm:text-5xl lg:text-7xl font-black leading-tight tracking-tight text-white">
+            Donnez vie à vos
+            <span className="block bg-gradient-to-r from-indigo-400 via-blue-400 to-violet-400 bg-clip-text text-transparent">
+              projets digitaux.
+            </span>
+          </h1>
 
-            <a
-              href="mailto:contact@wehda.fr"
-              className="flex items-center gap-5 group w-fit p-2 -ml-2 rounded-2xl hover:bg-white hover:shadow-sm transition-all duration-300"
-            >
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-100 to-indigo-50 text-indigo-600 group-hover:scale-110 group-hover:-rotate-12 transition-all duration-300 shadow-sm">
-                <i className="bi bi-envelope text-xl"></i>
-              </div>
-              <span className="text-lg font-semibold text-gray-700 group-hover:text-indigo-600 transition">
-                contact@wehda.fr
-              </span>
-            </a>
-
-            <div className="flex items-start gap-5 group p-2 -ml-2 rounded-2xl transition-all duration-300">
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-100 to-indigo-50 text-indigo-600 group-hover:bounce transition-all">
-                <i className="bi bi-geo-alt text-xl"></i>
-              </div>
-              <a href="https://www.google.com/search?q=64%20Rue%20Louis%20Blanc%2C%2075010%20Paris&shem=rimspwouoe&shndl=40&source=sh%2Fx%2Floc%2Fgeo%2Fm1%2F1&kgs=ed9f0e74030534e3" target="_blank" rel="noreferrer">
-                <span className="text-lg font-semibold text-gray-700 pt-2 block hover:text-indigo-600 transition duration-300">
-                  64 Rue Louis Blanc
-75010 Paris
-                </span>
-              </a>
-            </div>
-          </div>
-
-          {/* MAP WITH PROFESSIONAL WRAPPER */}
-          <div className="group w-full h-80 rounded-[2rem] overflow-hidden border border-indigo-100 shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out relative transform hover:scale-[1.01]">
-            <div className="absolute inset-0 bg-indigo-500/5 mix-blend-overlay pointer-events-none group-hover:opacity-0 transition-opacity duration-700" />
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.6577062817532!2d2.3579370751242754!3d48.883801498919766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e70546f1479%3A0xcb1341dae1e0e515!2s64%20Rue%20Louis%20Blanc%2C%2075010%20Paris!5e0!3m2!1sfr!2sfr!4v1777751592919!5m2!1sfr!2sfr" width="600" height="450" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
+          <p className="mt-8 text-gray-400 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed">
+            Applications web, plateformes e-commerce, applications mobiles,
+            solutions métiers et accompagnement digital.
+            <span className="text-white font-semibold">
+              {" "}
+              AYACODIA transforme vos idées en expériences modernes et performantes.
+            </span>
+          </p>
         </div>
 
-        {/* RIGHT SECTION - FORM */}
-        <div className="bg-white/80 backdrop-blur-2xl p-6 md:p-10 lg:p-12 rounded-[3rem] border border-white shadow-[0_20px_50px_rgba(79,70,229,0.1)] transform animate-slideUp transition-all hover:shadow-indigo-200/50 duration-500">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="group space-y-2">
-                <label className="text-xs font-black uppercase tracking-widest text-indigo-500 ml-1 transition-colors group-focus-within:text-indigo-600">
-                  Nom Complet
-                </label>
-                <input
-                  type="text"
-                  placeholder="Prénom Nom"
-                  className="w-full p-4 rounded-2xl border-none ring-1 ring-gray-100 focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none bg-gray-50/50 transition-all duration-300"
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  value={formData.name}
+        {/* CONTENT */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          {/* LEFT SIDE */}
+          <div className="animate-fadeLeft">
+            {/* CARD */}
+            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-2xl p-7 sm:p-10">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-500/10 blur-[120px] rounded-full"></div>
+
+              {/* LOGO */}
+              <div className="relative z-10">
+                <img
+                  src="/logo.png"
+                  alt="AYACODIA"
+                  className="w-[220px] sm:w-[280px] object-contain drop-shadow-[0_0_25px_rgba(99,102,241,0.4)] hover:scale-105 transition duration-500"
                 />
-              </div>
 
-              <div className="group space-y-2">
-                <label className="text-xs font-black uppercase tracking-widest text-indigo-500 ml-1">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  placeholder="email@domaine.com"
-                  className="w-full p-4 rounded-2xl border-none ring-1 ring-gray-100 focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none bg-gray-50/50 transition-all duration-300"
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  value={formData.email}
-                />
+                <h2 className="mt-10 text-3xl sm:text-4xl font-black text-white leading-tight">
+                  Une équipe dédiée à votre réussite digitale.
+                </h2>
+
+                <p className="mt-6 text-gray-400 leading-relaxed text-sm sm:text-base">
+                  Nous accompagnons les entreprises, startups et commerces dans
+                  la création de solutions modernes, rapides et sécurisées.
+                  Notre mission est de construire des plateformes élégantes,
+                  performantes et pensées pour la croissance.
+                </p>
+
+                {/* FEATURES */}
+                <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    {
+                      icon: "bi-window",
+                      title: "Applications Web",
+                    },
+                    {
+                      icon: "bi-phone",
+                      title: "Applications Mobile",
+                    },
+                    {
+                      icon: "bi-cart",
+                      title: "E-commerce",
+                    },
+                    {
+                      icon: "bi-lightning",
+                      title: "Solutions Performantes",
+                    },
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className="group rounded-2xl border border-white/10 bg-white/[0.04] p-5 hover:bg-white/[0.06] hover:-translate-y-1 transition-all duration-500"
+                    >
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition duration-500 block mx-auto">
+                        <i className={`bi ${item.icon} text-white text-xl`}></i>
+                      </div>
+
+                      <h3 className="mt-4 text-white font-bold text-lg">
+                        {item.title}
+                      </h3>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CONTACT INFO */}
+                <div className="mt-10 space-y-5">
+                  <a
+                    href="mailto:info@ayacodia.com"
+                    className="group flex items-center gap-5"
+                  >
+                    <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500">
+                      <i className="bi bi-envelope-fill text-xl"></i>
+                    </div>
+
+                    <div>
+                      <p className="text-gray-500 text-sm">Email</p>
+                      <p className="text-white font-semibold group-hover:text-indigo-300 transition">
+                        info@ayacodia.com
+                      </p>
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://maps.app.goo.gl/zx4vu5CTeVUuf15h6"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-center gap-5"
+                  >
+                    <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500">
+                      <i className="bi bi-geo-alt-fill text-xl"></i>
+                    </div>
+
+                    <div>
+                      <p className="text-gray-500 text-sm">Adresse</p>
+                      <p className="text-white font-semibold group-hover:text-indigo-300 transition">
+                        68 bis Rue jean mermoz 91230 Montgeron
+                      </p>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
 
-            <div className="group space-y-2">
-              <label className="text-xs font-black uppercase tracking-widest text-indigo-500 ml-1">
-                Téléphone
-              </label>
-              <input
-                type="tel"
-                placeholder="+33 1 23 45 67 89"
-                className="w-full p-4 rounded-2xl border-none ring-1 ring-gray-100 focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none bg-gray-50/50 transition-all duration-300"
-                onChange={(e) => setFormData({ ...formData, telephone: e.target.value })}
-                value={formData.telephone}
-              />
-            </div>
+            {/* MAP */}
+            
+          </div>
 
-            <div className="group space-y-2">
-              <label className="text-xs font-black uppercase tracking-widest text-indigo-500 ml-1">
-                Message
-              </label>
-              <textarea
-                rows="4"
-                placeholder="Comment pouvons-nous vous aider ?"
-                className="w-full p-4 rounded-2xl border-none ring-1 ring-gray-100 focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none bg-gray-50/50 transition-all duration-300 resize-none"
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                value={formData.message}
-              ></textarea>
-            </div>
+          {/* RIGHT SIDE */}
+          <div className="animate-fadeRight">
+            <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-7 sm:p-10 lg:p-12 shadow-[0_20px_80px_rgba(79,70,229,0.2)]">
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-blue-500/5 pointer-events-none"></div>
 
-            <button
-              type="submit"
-              className="mt-4 relative overflow-hidden bg-gradient-to-r from-indigo-600 via-indigo-700 to-violet-700 text-white py-5 rounded-2xl font-black text-lg tracking-widest hover:shadow-[0_10px_30px_rgba(79,70,229,0.4)] hover:-translate-y-1 transition-all duration-300 active:scale-95 group"
-            >
-              <div className="flex items-center justify-center gap-3 relative z-10">
-                <i className="bi bi-send-fill group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
-                ENVOYER LE MESSAGE
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-[0.2em]">
+                  <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+                  Contact Rapide
+                </div>
+
+                <h2 className="mt-6 text-3xl sm:text-5xl font-black text-white leading-tight">
+                  Parlons de votre projet.
+                </h2>
+
+                <p className="mt-5 text-gray-400 text-sm sm:text-base leading-relaxed">
+                  Décrivez votre besoin et notre équipe vous répondra rapidement
+                  avec une solution adaptée à votre activité.
+                </p>
+
+                {/* FORM */}
+                <form
+                  onSubmit={handleSubmit}
+                  className="mt-10 flex flex-col gap-6"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="group">
+                      <label className="text-xs uppercase tracking-[0.2em] text-indigo-300 font-bold">
+                        Nom complet
+                      </label>
+
+                      <input
+                        type="text"
+                        placeholder="Prénom Nom"
+                        className="mt-3 w-full rounded-2xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-500 outline-none focus:border-indigo-500 focus:bg-white/[0.08] transition-all duration-300"
+                        value={formData.name}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            name: e.target.value,
+                          })
+                        }
+                      />
+                    </div>
+
+                    <div className="group">
+                      <label className="text-xs uppercase tracking-[0.2em] text-indigo-300 font-bold">
+                        Email
+                      </label>
+
+                      <input
+                        type="email"
+                        placeholder="email@domaine.com"
+                        className="mt-3 w-full rounded-2xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-500 outline-none focus:border-indigo-500 focus:bg-white/[0.08] transition-all duration-300"
+                        value={formData.email}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            email: e.target.value,
+                          })
+                        }
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-xs uppercase tracking-[0.2em] text-indigo-300 font-bold">
+                      Téléphone
+                    </label>
+
+                    <input
+                      type="tel"
+                      placeholder="+33 1 23 45 67 89"
+                      className="mt-3 w-full rounded-2xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-500 outline-none focus:border-indigo-500 focus:bg-white/[0.08] transition-all duration-300"
+                      value={formData.telephone}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          telephone: e.target.value,
+                        })
+                      }
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-xs uppercase tracking-[0.2em] text-indigo-300 font-bold">
+                      Message
+                    </label>
+
+                    <textarea
+                      rows="6"
+                      placeholder="Parlez-nous de votre projet..."
+                      className="mt-3 w-full rounded-2xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-500 outline-none focus:border-indigo-500 focus:bg-white/[0.08] transition-all duration-300 resize-none"
+                      value={formData.message}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          message: e.target.value,
+                        })
+                      }
+                    ></textarea>
+                  </div>
+
+                  {/* BUTTON */}
+                  <button
+                    type="submit"
+                    className="group relative overflow-hidden rounded-2xl py-5 font-black tracking-[0.2em] text-white"
+                  >
+                    <span className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-blue-500 to-violet-600"></span>
+
+                    <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-blue-500 to-indigo-500 blur-xl"></span>
+
+                    <span className="relative z-10 flex items-center justify-center gap-3 text-sm sm:text-base">
+                      ENVOYER LE MESSAGE
+                      <i className="bi bi-arrow-right text-xl group-hover:translate-x-1 transition duration-300"></i>
+                    </span>
+                  </button>
+                </form>
               </div>
-              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </button>
-          </form>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* CUSTOM ANIMATIONS */}
+      {/* ANIMATIONS */}
       <style jsx="true">{`
-        @keyframes slideUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
-        @keyframes fadeInLeft {
-          from { opacity: 0; transform: translateX(-30px); }
-          to { opacity: 1; transform: translateX(0); }
+
+        @keyframes fadeLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-40px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
-        .animate-slideUp {
-          animation: slideUp 0.8s ease-out forwards;
+
+        @keyframes fadeRight {
+          from {
+            opacity: 0;
+            transform: translateX(40px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
-        .animate-fadeInLeft {
-          animation: fadeInLeft 0.8s ease-out forwards;
+
+        .animate-fadeUp {
+          animation: fadeUp 0.9s ease forwards;
+        }
+
+        .animate-fadeLeft {
+          animation: fadeLeft 1s ease forwards;
+        }
+
+        .animate-fadeRight {
+          animation: fadeRight 1s ease forwards;
         }
       `}</style>
-    </div>
+    </section>
   );
 };
 

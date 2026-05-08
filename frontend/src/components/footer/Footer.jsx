@@ -6,8 +6,16 @@ const Footer = () => {
       title: "Entreprise",
       links: [
         { name: "À propos", href: "/about" },
-        { name: "Conditions", href: "/terms" },
-        { name: "Confidentialité", href: "/privacy-policy" },
+        { name: "Nos Services", href: "/services" },
+        { name: "Carrières", href: "/careers" },
+      ],
+    },
+    {
+      title: "Solutions",
+      links: [
+        { name: "Applications Web", href: "/web-development" },
+        { name: "Applications Mobile", href: "/mobile-development" },
+        { name: "UI/UX Design", href: "/design" },
       ],
     },
     {
@@ -15,116 +23,197 @@ const Footer = () => {
       links: [
         { name: "Contact", href: "/contact" },
         { name: "FAQ", href: "/faq" },
-        { name: "Livraison", href: "/shipping" },
-      ],
-    },
-    {
-      title: "Boutique",
-      links: [
-        { name: "Produits", href: "/products" },
-        { name: "Nouveautés", href: "/new-arrivals" },
-        { name: "Promotions", href: "/sales" },
+        { name: "Confidentialité", href: "/privacy-policy" },
       ],
     },
   ];
 
   return (
-    <footer className="relative bg-[#02040a] border-t border-indigo-500/10 text-gray-200 overflow-hidden">
-      {/* Effets de lumière en arrière-plan */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 blur-[120px] rounded-full -mr-64 -mb-64"></div>
-        <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-blue-600/5 blur-[100px] rounded-full -ml-32 -mt-32"></div>
+    <footer className="relative overflow-hidden bg-[#020617] text-white border-t border-indigo-500/10">
+      {/* Animated background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-[-150px] left-[-120px] w-[350px] h-[350px] bg-indigo-600/20 blur-[120px] rounded-full animate-pulse"></div>
+
+        <div className="absolute bottom-[-180px] right-[-100px] w-[420px] h-[420px] bg-blue-500/10 blur-[140px] rounded-full animate-pulse delay-1000"></div>
+
+        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:60px_60px]"></div>
       </div>
 
-      {/* Ligne lumineuse supérieure */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"></div>
+      {/* Top line */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
 
-      <div className="max-w-7xl mx-auto px-4 py-16 sm:px-8 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-16">
-          
-          {/* COLONNE MARQUE & SLOGAN */}
-          <div className="col-span-1 flex flex-col items-center lg:items-start text-center lg:text-left animate-fadeIn">
-            <div className="group cursor-default relative">
-              <h2 className="text-3xl font-black tracking-tighter text-white transition-all duration-700 group-hover:text-indigo-400">
-                <a href="/">WEHDA</a>
-              </h2>
-              <div className="h-0.5 w-8 bg-indigo-500 transition-all duration-500 group-hover:w-full mt-1"></div>
-            </div>
-            
-            <p className="mt-6 text-gray-400 text-sm leading-relaxed max-w-xs font-medium">
-              Plateforme e-commerce moderne, rapide et sécurisée. Redéfinissez votre expérience shopping.
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 sm:py-20">
+        {/* TOP CONTENT */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-14">
+          {/* BRAND SECTION */}
+          <div className="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+            {/* LOGO */}
+            <a href="/" className="group relative inline-block">
+              <div className="absolute inset-0 bg-indigo-500/20 blur-2xl rounded-full opacity-60 group-hover:opacity-100 transition duration-700"></div>
+
+              <img
+                src="/logo.png"
+                alt="AYACODIA"
+                className="relative z-10 w-[240px] sm:w-[280px] md:w-[320px] object-contain drop-shadow-[0_0_25px_rgba(99,102,241,0.4)] group-hover:scale-105 transition-all duration-500"
+              />
+            </a>
+
+            {/* DESCRIPTION */}
+            <p className="mt-8 text-gray-400 leading-relaxed max-w-md text-sm sm:text-base">
+              Nous développons des applications web et mobiles modernes,
+              performantes et sécurisées pour accompagner les entreprises dans
+              leur transformation digitale.
             </p>
 
-            <p className="mt-4 text-gray-500 text-xs italic">
-              Découvrez une sélection exclusive de produits livrés chez vous en un clin d'œil.
-            </p>
-            
-            {/* BADGE MICRO-ENTREPRISE & LOCALISATION */}
-            <div className="mt-6 flex flex-wrap gap-2 justify-center lg:justify-start">
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-                Micro-entreprise
-              </span>
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-white/5 text-gray-300 border border-white/10">
-                <i className="bi bi-geo-alt-fill mr-1 text-indigo-500"></i> <a href="https://www.google.com/maps/place/64+Rue+Louis+Blanc,+75010+Paris/@48.8838015,2.3579371,17z/data=!4m6!3m5!1s0x47e66e70546f1479:0xcb1341dae1e0e515!8m2!3d48.883798!4d2.360512!16s%2Fg%2F11pw1y3h47?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D">Basé à Paris 10</a>
-              </span>
+            {/* TAGS */}
+            <div className="mt-6 flex flex-wrap justify-center lg:justify-start gap-3">
+              <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-xs font-semibold text-indigo-300 hover:scale-105 transition duration-300">
+                Développement Web
+              </div>
+
+              <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-xs font-semibold text-indigo-300 hover:scale-105 transition duration-300">
+                Mobile Apps
+              </div>
+
+              <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-xs font-semibold text-indigo-300 hover:scale-105 transition duration-300">
+                Solutions Entreprises
+              </div>
             </div>
 
-            {/* RÉSEAUX SOCIAUX */}
-            <div className="flex gap-4 mt-8">
-              {["facebook", "instagram", "twitter-x"].map((icon) => (
+            {/* SOCIALS */}
+            <div className="flex items-center gap-4 mt-10">
+              {[
+                { icon: "linkedin", link: "#" },
+                { icon: "github", link: "#" },
+                { icon: "instagram", link: "#" },
+                { icon: "twitter-x", link: "#" },
+              ].map((social, index) => (
                 <a
-                  key={icon}
-                  href={`https://${icon}.com`}
-                  className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:border-indigo-500 hover:text-indigo-400 transition-all duration-300 hover:-translate-y-1"
+                  key={index}
+                  href={social.link}
+                  className="group relative w-11 h-11 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl flex items-center justify-center overflow-hidden hover:-translate-y-2 transition-all duration-500"
                 >
-                  <i className={`bi bi-${icon} text-lg`}></i>
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-blue-500 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+                  <i
+                    className={`bi bi-${social.icon} relative z-10 text-lg text-gray-300 group-hover:text-white transition duration-300`}
+                  ></i>
                 </a>
               ))}
             </div>
           </div>
 
-          {/* LIENS DE NAVIGATION */}
-          <div className="col-span-1 lg:col-span-3 grid grid-cols-3 gap-3 sm:gap-10">
-            {footerSections.map((section, index) => (
-              <div key={index} className="flex flex-col items-start text-left animate-slideUp" style={{ animationDelay: `${index * 150}ms` }}>
-                <h3 className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-white mb-6 flex items-center">
-                  <span className="h-4 w-0.5 bg-indigo-500 mr-2 rounded-full shadow-[0_0_8px_rgba(99,102,241,0.5)]"></span>
-                  {section.title}
-                </h3>
-                <ul className="space-y-4">
-                  {section.links.map((link, i) => (
-                    <li key={i}>
-                      <a href={link.href} className="text-gray-400 text-[11px] sm:text-sm hover:text-white transition-all duration-300">
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          {/* LINKS */}
+          <div className="lg:col-span-3">
+            {/* KEEP IN ONE LINE ON MOBILE */}
+            <div className="grid grid-cols-3 gap-4 sm:gap-10">
+              {footerSections.map((section, index) => (
+                <div
+                  key={index}
+                  className="animate-footerUp"
+                  style={{
+                    animationDelay: `${index * 200}ms`,
+                  }}
+                >
+                  <h3 className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.15em] text-white mb-5 flex items-center justify-center sm:justify-start">
+                    <span className="w-2 h-2 rounded-full bg-indigo-500 mr-2 shadow-[0_0_20px_rgba(99,102,241,1)]"></span>
+                    {section.title}
+                  </h3>
+
+                  <ul className="space-y-3 text-center sm:text-left">
+                    {section.links.map((link, i) => (
+                      <li key={i}>
+                        <a
+                          href={link.href}
+                          className="group inline-flex items-center text-gray-400 hover:text-white transition-all duration-300 text-[11px] sm:text-sm"
+                        >
+                          <span className="hidden sm:block w-0 group-hover:w-4 h-[1px] bg-indigo-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+
+                          {link.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* BARRE INFÉRIEURE - LÉGALITÉ */}
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col items-center text-center">
-          <div className="bg-white/[0.02] backdrop-blur-md px-6 py-4 rounded-2xl border border-white/5">
-            <p className="text-gray-500 text-[10px] sm:text-[11px] tracking-wide uppercase">
-              © {new Date().getFullYear()} <span className="font-black text-indigo-400"><a href="/">WEHDA</a></span>. 
-              Fait avec ❤️ à Paris 10e.
-            </p>
-            <p className="text-[9px] text-gray-600 mt-2 italic max-w-xl mx-auto">
-              
-              Toutes les transactions sont sécurisées et cryptées.
-            </p>
+        {/* CTA BOX */}
+        <div className="mt-20 relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-2xl p-8 sm:p-12">
+          <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-500/10 blur-[100px] rounded-full"></div>
+
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="text-center lg:text-left">
+              <h3 className="text-2xl sm:text-4xl font-black leading-tight">
+                Construisons votre prochaine
+                <span className="block text-transparent bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text">
+                  solution digitale.
+                </span>
+              </h3>
+
+              <p className="mt-4 text-gray-400 max-w-2xl text-sm sm:text-base">
+                AYACODIA accompagne les startups, commerces et entreprises avec
+                des solutions modernes adaptées à leurs besoins.
+              </p>
+            </div>
+
+            <a
+              href="/contact"
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-2xl px-8 py-4 font-bold text-white transition-all duration-500"
+            >
+              <span className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-blue-600"></span>
+
+              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-blue-500 to-indigo-500 blur-xl"></span>
+
+              <span className="relative z-10 flex items-center gap-3">
+                Démarrer un projet
+                <i className="bi bi-arrow-right-short text-2xl group-hover:translate-x-1 transition duration-300"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        {/* BOTTOM */}
+        <div className="mt-14 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
+          <p className="text-gray-500 text-xs sm:text-sm">
+            © {new Date().getFullYear()}{" "}
+            <span className="font-bold text-indigo-400">AYACODIA</span>. Tous
+            droits réservés.
+          </p>
+
+          <div className="flex items-center gap-5 text-gray-500 text-xs sm:text-sm">
+            <span className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+              Montgeron, France
+            </span>
+
+            <span className="hidden sm:block">•</span>
+
+            <span>Applications Web & Mobile</span>
           </div>
         </div>
       </div>
 
+      {/* ANIMATIONS */}
       <style jsx="true">{`
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fadeIn { animation: fadeIn 0.8s ease forwards; }
-        .animate-slideUp { opacity: 0; animation: slideUp 0.6s ease forwards; }
+        @keyframes footerUp {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-footerUp {
+          opacity: 0;
+          animation: footerUp 0.8s ease forwards;
+        }
       `}</style>
     </footer>
   );
