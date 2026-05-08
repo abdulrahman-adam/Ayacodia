@@ -116,11 +116,11 @@ const Contact = () => {
               <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-500/10 blur-[120px] rounded-full"></div>
 
               {/* LOGO */}
-              <div className="relative z-10">
+              <div className="text-center relative z-10">
                 <img
                   src="/logo.png"
                   alt="AYACODIA"
-                  className="w-[220px] sm:w-[280px] object-contain drop-shadow-[0_0_25px_rgba(99,102,241,0.4)] hover:scale-105 transition duration-500"
+                  className="mx-auto w-[220px] sm:w-[280px] object-contain drop-shadow-[0_0_25px_rgba(99,102,241,0.4)] hover:scale-105 transition duration-500"
                 />
 
                 <h2 className="mt-10 text-3xl sm:text-4xl font-black text-white leading-tight">
@@ -218,12 +218,12 @@ const Contact = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-blue-500/5 pointer-events-none"></div>
 
               <div className="relative z-10">
-                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-[0.2em]">
+                <div className="text-center inline-flex items-center gap-3 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-[0.2em]">
                   <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
                   Contact Rapide
                 </div>
 
-                <h2 className="mt-6 text-3xl sm:text-5xl font-black text-white leading-tight">
+                <h2 className="text-center mt-6 text-3xl sm:text-5xl font-black text-white leading-tight">
                   Parlons de votre projet.
                 </h2>
 
