@@ -1,4 +1,5 @@
 import React from "react";
+import PartenaireList from "../../components/partenaireList/PartenaireList";
 
 
 const Services = () => {
@@ -319,6 +320,8 @@ const Services = () => {
             </div>
           </div>
         </div>
+
+        <PartenaireList />
       </section>
 
       {/* ANIMATIONS */}

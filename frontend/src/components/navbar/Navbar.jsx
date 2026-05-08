@@ -57,6 +57,7 @@ const Navbar = () => {
           {[
             { name: "Accueil", path: "/" },
             { name: "Services", path: "/services" },
+            { name: "Partenaire", path: "/partenaire" },
             { name: "Contact", path: "/contact" }
           ].map((item) => (
             <NavLink
@@ -151,6 +152,7 @@ const Navbar = () => {
             {[
                 { to: "/", icon: "house-door-fill", label: "Accueil" },
                 { to: "/services", icon: "box-fill", label: "Services" },
+                { to: "/partenaire", icon: "people-fill", label: "Partenaire" },
                 { to: "/contact", icon: "envelope-paper-fill", label: "Contact" }
             ].map((link, i) => (
                 <NavLink 

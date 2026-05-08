@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
+import PartenaireList from "../../components/partenaireList/PartenaireList";
 
 const Partenaire = () => {
   const { createPartenaire } = useAppContext();
@@ -63,7 +64,7 @@ const Partenaire = () => {
   return (
     <div 
       style={{ margin: '1px auto' }}
-      className="max-w-[1440px] px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 bg-gradient-to-br from-gray-50 via-white to-indigo-50/40 rounded-3xl md:rounded-[2.5rem] py-8 md:py-16 overflow-hidden relative shadow-2xl"
+      className="max-w-[1440px] px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 rounded-3xl md:rounded-[2.5rem] py-8 md:py-16 overflow-hidden relative shadow-2xl bg-[#020617] text-white"
     >
       {/* BACKGROUND MAGIC SHAPES */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-200/20 blur-[120px] rounded-full animate-pulse"></div>
@@ -211,6 +212,8 @@ const Partenaire = () => {
         .animate-fadeInLeft { animation: fadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         .animate-float { animation: float 5s ease-in-out infinite; }
       `}</style>
+
+      <PartenaireList />
     </div>
   );
 };
