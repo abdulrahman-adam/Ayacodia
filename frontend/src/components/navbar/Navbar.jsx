@@ -16,7 +16,7 @@ const Navbar = () => {
     navigate,
     searchQuery,
     setSearchQuery,
-    categories,
+   
   } = useAppContext();
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const Navbar = () => {
         <ul className="hidden sm:flex items-center gap-8 font-bold text-gray-600">
           {[
             { name: "Accueil", path: "/" },
-            { name: "Produits", path: "/products" },
+            { name: "Services", path: "/services" },
             { name: "Contact", path: "/contact" }
           ].map((item) => (
             <NavLink
@@ -72,25 +72,6 @@ const Navbar = () => {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-500 group-hover:w-full"></span>
             </NavLink>
           ))}
-
-          {/* Catégories Desktop */}
-          <div className="relative group flex items-center">
-            <select
-              onChange={(e) => {
-                const selectedPath = e.target.value;
-                selectedPath ? navigate(`/products/${selectedPath}`) : navigate("/products");
-              }}
-              className="bg-transparent outline-none cursor-pointer font-bold group-hover:text-indigo-600 appearance-none pr-5 py-1 z-10 transition-colors"
-            >
-              <option value="">Catégories</option>
-              {categories
-                ?.filter((cat) => cat.parentId === null)
-                .map((cat, index) => (
-                  <option key={index} value={cat.path}>{cat.text}</option>
-                ))}
-            </select>
-            <i className="bi bi-chevron-down absolute right-0 text-[10px] text-gray-400 group-hover:text-indigo-600 transition-transform duration-500 group-hover:rotate-180"></i>
-          </div>
         </ul>
 
         {/* --- ACTIONS --- */}
@@ -130,9 +111,7 @@ const Navbar = () => {
                 </div>
                 <div className="invisible group-hover:visible absolute right-0 top-full pt-3 w-48 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 z-[70]">
                   <ul className="bg-white/90 backdrop-blur-lg shadow-2xl border border-gray-100 rounded-2xl py-3 text-sm overflow-hidden">
-                    <li onClick={() => navigate("/my-orders")} className="px-5 py-2.5 hover:bg-indigo-600 hover:text-white cursor-pointer flex items-center gap-3 transition-colors">
-                      <i className="bi bi-bag-heart"></i> Mes Commandes
-                    </li>
+  
                     <li onClick={logout} className="px-5 py-2.5 hover:bg-red-50 text-red-500 cursor-pointer flex items-center gap-3 transition-colors border-t border-gray-50 mt-1">
                       <i className="bi bi-box-arrow-right"></i> Déconnexion
                     </li>
@@ -171,7 +150,7 @@ const Navbar = () => {
           <div className="flex flex-col p-8 gap-8 overflow-y-auto">
             {[
                 { to: "/", icon: "house-door-fill", label: "Accueil" },
-                { to: "/products", icon: "box-fill", label: "Produits" },
+                { to: "/services", icon: "box-fill", label: "Services" },
                 { to: "/contact", icon: "envelope-paper-fill", label: "Contact" }
             ].map((link, i) => (
                 <NavLink 
@@ -200,9 +179,7 @@ const Navbar = () => {
                 </button>
               ) : (
                 <>
-                  <NavLink to="/my-orders" onClick={() => setOpen(false)} className="flex items-center gap-4 p-5 rounded-2xl bg-indigo-50 text-indigo-700 font-black">
-                    <i className="bi bi-stars"></i> Mes Commandes
-                  </NavLink>
+                 
                   <button onClick={logout} className="flex items-center gap-4 p-5 rounded-2xl bg-red-50 text-red-500 font-black transition-all active:bg-red-500 active:text-white">
                     <i className="bi bi-power"></i> Déconnexion
                   </button>

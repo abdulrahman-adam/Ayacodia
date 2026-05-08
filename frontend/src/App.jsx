@@ -14,21 +14,7 @@ import AdminLayout from "./pages/admin/AdminLayout";
 // Pages
 import Home from "./pages/home/Home";
 import Contact from "./pages/contact/Contact";
-import AllProducts from "./pages/allProducts/AllProducts";
-import ProductDetails from "./pages/productDetails/ProductDetails";
-import TreeProductList from "./components/treeProductList/TreeProductList";
-
-// Admin & User Pages
-import AddCategory from "./pages/admin/AddCategory";
-import AddProduct from "./pages/admin/AddProduct";
-import ListCategory from "./pages/admin/ListCategory";
-import ProductList from "./pages/admin/ProductList";
 import ContactList from "./pages/admin/ContactList";
-import Cart from "./pages/cart/Cart";
-import AddAddress from "./pages/addAddress/AddAdress";
-import MyOrders from "./pages/myOrders/MyOrders";
-import Orders from "./pages/admin/Orders";
-import PaymentLoader from "./pages/paymentLoader/PaymentLoader";
 import { Toaster } from "react-hot-toast";
 import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
 import About from "./pages/about/About";
@@ -36,10 +22,10 @@ import Terms from "./pages/terms/Terms";
 import FAQ from "./pages/faq/FAQ";
 import Shipping from "./pages/Shipping/Shipping";
 import Promotions from "./pages/promotions/Promotions";
-import NewArrivals from "./pages/newArrivals/NewArrivals";
 import AdminHours from "./pages/admin/AdminHours";
 import Partenaire from "./pages/partenaire/Partenaire";
 import PartenaireList from "./pages/admin/PartenaireList";
+import Services from "./pages/services/Services";
 
 
 const App = () => {
@@ -115,41 +101,20 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/partenaire" element={<Partenaire />} />
-        <Route path="/cart" element={<Cart />} />
+        
         <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
         <Route path="/about" element={<About />} />
-        <Route path="/new-arrivals" element={<NewArrivals />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/shipping" element={<Shipping />} />
         <Route path="/sales" element={<Promotions />} />
         {/* Redirection si la page n'existe pas */}
-            <Route path="*" element={<h1 className="text-center py-20">404 - Page non trouvée</h1>} />
-        {/* <Route path="/add-address" element={<AddAddress />} />
-        <Route path='/my-orders' element={<MyOrders />} /> */}
-        {/* ================= PROTECTED USER ROUTES ================= */}
-        <Route
-          path="/my-orders"
-          element={user ? <MyOrders /> : <Navigate to="/" />}
-        />
-        <Route
-          path="/add-address"
-          element={user ? <AddAddress /> : <Navigate to="/" />}
-        />
-        <Route path="/loader" element={<PaymentLoader />} />
-
-        {/* ================= PRODUCT SYSTEM ================= */}
-        <Route path="/products" element={<AllProducts />} />
-
-        {/* This single line now handles 1, 2, 3, 4, or even 10 levels of categories */}
-        <Route path="/products/*" element={<TreeProductList />} />
-
-
+        <Route path="*" element={<h1 className="text-center py-20">404 - Page non trouvée</h1>} />
+       
         
 
-        {/* Unified Product Detail Route */}
-        <Route path="/product/:id" element={<ProductDetails />} />
-
+      
         <Route path="/loader" element={<Loading />} />
 
         {/* ================= ADMIN ROUTES ================= */}
@@ -157,13 +122,9 @@ const App = () => {
           path="/admin"
           element={isSeller ? <AdminLayout /> : <AdminLogin />}
         >
-          <Route index element={<AddProduct />} />
-          <Route path="product-list" element={<ProductList />} />
-          <Route path="category-list" element={<ListCategory />} />
-          <Route path="add-category" element={<AddCategory />} />
+  
           <Route path="all-contact" element={<ContactList />} />
           <Route path="all-partenaire" element={<PartenaireList />} />
-          <Route path="orders" element={<Orders />} />
           <Route path="hours" element={<AdminHours />} />
         </Route>
 
