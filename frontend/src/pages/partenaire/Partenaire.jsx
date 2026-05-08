@@ -64,7 +64,7 @@ const Partenaire = () => {
   return (
     <div 
       style={{ margin: '1px auto' }}
-      className="max-w-[1440px] px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 rounded-3xl md:rounded-[2.5rem] py-8 md:py-16 overflow-hidden relative shadow-2xl bg-[#020617] text-white"
+      className="max-w-[1440px] px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 rounded-3xl md:rounded-[2.5rem] py-8 md:py-16 overflow-hidden relative shadow-2xl bg-[#020617]"
     >
       {/* BACKGROUND MAGIC SHAPES */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-200/20 blur-[120px] rounded-full animate-pulse"></div>
