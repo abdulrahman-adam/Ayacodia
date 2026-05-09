@@ -3,6 +3,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import 'dotenv/config';
+
 import connectDB, { sequelize } from "./configs/db.js";
 import connectCloudinary from "./configs/cloudinary.js";
 
@@ -19,6 +20,7 @@ import { stripeWebhooks } from "./controllers/orderController.js";
 import hourRouter from "./routes/hourRoute.js";
 import Hour from "./models/Hour.js";
 import partenaireRouter from "./routes/partenaireRoute.js";
+import mailRouter from "./routes/mailRoute.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -116,6 +118,7 @@ app.use('/api/order', orderRouter);
 app.use('/api/contact', contactRouter);
 app.use('/api/partenaire', partenaireRouter);
 app.use('/api/hours', hourRouter);
+app.use('/api/auth', mailRouter);
 
 app.get('/', (req, res) => res.send("API IS WORKING NOW"));
 

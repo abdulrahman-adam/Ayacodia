@@ -27,6 +27,7 @@ import Partenaire from "./pages/partenaire/Partenaire";
 import PartenaireList from "./pages/admin/PartenaireList";
 import Services from "./pages/services/Services";
 import CookieConsent from "./components/consent/CookieConsent ";
+import ForgotPassword from "./pages/forgotPassword/ForgotPassword";
 
 
 const App = () => {
@@ -112,6 +113,10 @@ const App = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/shipping" element={<Shipping />} />
         <Route path="/sales" element={<Promotions />} />
+        <Route
+    path="/forgot-password"
+    element={<ForgotPassword />}
+/>
         {/* Redirection si la page n'existe pas */}
         <Route path="*" element={<h1 className="text-center py-20">404 - Page non trouvée</h1>} />
        

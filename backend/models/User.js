@@ -1,37 +1,56 @@
-
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../configs/db.js';
-// import { sequelize } from '../config/db.js'; // Adjust this path to where your connection is
 
 const User = sequelize.define('User', {
     name: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+            len: [3, 50],
+            is: /^[A-Za-z\s]+$/i
+        }
     },
+
     email: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
         validate: {
             isEmail: true,
+            is: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
         },
-        
     },
+
     password: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+            is: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/
+        }
     },
+
     role: {
-        type: DataTypes.ENUM('USER', 'ADMIN'), // Restricts values to only these two
+        type: DataTypes.ENUM('USER', 'ADMIN'),
         defaultValue: 'USER',
     },
+
     cartItems: {
-        type: DataTypes.JSON, // Stores your object as a JSON string in MySQL
+        type: DataTypes.JSON,
         defaultValue: {},
+    },
+
+    resetCode: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+
+    resetCodeExpire: {
+        type: DataTypes.DATE,
+        allowNull: true,
     }
+
 }, {
-    // Other model options
-    timestamps: true, // Automatically adds createdAt and updatedAt
+    timestamps: true,
 });
 
 export default User;
