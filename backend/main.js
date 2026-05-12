@@ -10,13 +10,7 @@ import connectCloudinary from "./configs/cloudinary.js";
 // Routes
 import userRouter from "./routes/userRoute.js";
 import sellerRouter from "./routes/sellerRoute.js";
-import productRouter from "./routes/productRoute.js";
-import cartRouter from "./routes/cartRoute.js";
-import addressRouter from "./routes/addressRoute.js";
-import orderRouter from "./routes/orderRoute.js";
-import categoryRouter from "./routes/categoryRoute.js";
 import contactRouter from "./routes/contactRoute.js";
-import { stripeWebhooks } from "./controllers/orderController.js";
 import hourRouter from "./routes/hourRoute.js";
 import Hour from "./models/Hour.js";
 import partenaireRouter from "./routes/partenaireRoute.js";
@@ -38,13 +32,6 @@ try {
 
 connectCloudinary();
 
-
-// --- 1️⃣ Stripe Webhook (RAW body, no auth!) ---
-app.post(
-  "/webhook/stripe",
-  express.raw({ type: "application/json" }),
-  stripeWebhooks
-);
 
 
 // Add all versions of your domain here
@@ -110,11 +97,6 @@ try {
 // 4. API ROUTES
 app.use('/api/user', userRouter);
 app.use('/api/seller', sellerRouter);
-app.use('/api/product', productRouter);
-app.use('/api/category', categoryRouter);
-app.use('/api/cart', cartRouter);
-app.use('/api/address', addressRouter);
-app.use('/api/order', orderRouter);
 app.use('/api/contact', contactRouter);
 app.use('/api/partenaire', partenaireRouter);
 app.use('/api/hours', hourRouter);

@@ -23,9 +23,9 @@ const CookieBanner = () => {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[9999] px-4 sm:px-8 pb-4 sm:pb-6">
+    <div className="w-full fixed bottom-0 left-0 right-0 z-[9999]">
       
-      <div className="max-w-6xl mx-auto bg-[#020617]/95 backdrop-blur-2xl border border-white/10 shadow-2xl rounded-2xl p-5 sm:p-6 flex flex-col lg:flex-row gap-5 items-start lg:items-center justify-between animate-fadeUp">
+      <div className="max-w-6xl mx-auto bg-[#020617]/95 backdrop-blur-2xl border border-white/10 shadow-2xl p-5 sm:p-6 flex flex-col lg:flex-row gap-5 items-start lg:items-center justify-between animate-fadeUp">
 
         {/* TEXT */}
         <div className="text-sm sm:text-base text-gray-200 leading-relaxed">
@@ -46,14 +46,14 @@ const CookieBanner = () => {
 
           <button
             onClick={refuse}
-            className="w-full sm:w-auto px-6 py-3 rounded-xl border border-white/10 text-gray-300 hover:bg-white/5 transition"
+            className="w-full sm:w-auto px-6 py-3 border border-white/10 text-gray-300 hover:bg-white/5 transition"
           >
             Refuser
           </button>
 
           <button
             onClick={accept}
-            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold hover:scale-105 transition"
+            className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold hover:scale-105 transition"
           >
             Accepter
           </button>
