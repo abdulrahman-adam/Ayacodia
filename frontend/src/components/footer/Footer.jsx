@@ -67,15 +67,15 @@ const Footer = () => {
 
             {/* TAGS */}
             <div className="mt-6 flex flex-wrap justify-center lg:justify-start gap-3">
-              <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-xs font-semibold text-indigo-300 hover:scale-105 transition duration-300">
+              <div className="px-4 py-2 bg-white/5 border border-white/10 backdrop-blur-xl text-xs font-semibold text-indigo-300 hover:scale-105 transition duration-300">
                 Développement Web
               </div>
 
-              <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-xs font-semibold text-indigo-300 hover:scale-105 transition duration-300">
+              <div className="px-4 py-2 bg-white/5 border border-white/10 backdrop-blur-xl text-xs font-semibold text-indigo-300 hover:scale-105 transition duration-300">
                 Mobile Apps
               </div>
 
-              <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-xs font-semibold text-indigo-300 hover:scale-105 transition duration-300">
+              <div className="px-4 py-2 bg-white/5 border border-white/10 backdrop-blur-xl text-xs font-semibold text-indigo-300 hover:scale-105 transition duration-300">
                 Solutions Entreprises
               </div>
             </div>
@@ -140,41 +140,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* CTA BOX */}
-        <div className="mt-20 relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-2xl p-8 sm:p-12">
-          <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-500/10 blur-[100px] rounded-full"></div>
-
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="text-center lg:text-left">
-              <h3 className="text-2xl sm:text-4xl font-black leading-tight">
-                Construisons votre prochaine
-                <span className="block text-transparent bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text">
-                  solution digitale.
-                </span>
-              </h3>
-
-              <p className="mt-4 text-gray-400 max-w-2xl text-sm sm:text-base">
-                AYACODIA accompagne les startups, commerces et entreprises avec
-                des solutions modernes adaptées à leurs besoins.
-              </p>
-            </div>
-
-            <a
-              href="/contact"
-              className="group relative inline-flex items-center justify-center overflow-hidden rounded-2xl px-8 py-4 font-bold text-white transition-all duration-500"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-blue-600"></span>
-
-              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-blue-500 to-indigo-500 blur-xl"></span>
-
-              <span className="relative z-10 flex items-center gap-3">
-                Démarrer un projet
-                <i className="bi bi-arrow-right-short text-2xl group-hover:translate-x-1 transition duration-300"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-
+      
         {/* BOTTOM */}
         <div className="mt-14 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
           <p className="text-gray-500 text-xs sm:text-sm">

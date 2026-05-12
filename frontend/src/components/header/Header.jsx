@@ -33,17 +33,6 @@ export default function Header() {
     { number: "99%", label: "Clients satisfaits" },
   ];
 
-  const technologies = [
-    "React",
-    "Node.js",
-    "MongoDB",
-    "Express",
-    "React Native",
-    "Docker",
-    "Stripe",
-    "Firebase",
-  ];
-
   return (
     <div className="bg-[#020617] text-white overflow-hidden">
       {/* HERO SECTION */}
@@ -57,10 +46,10 @@ export default function Header() {
           <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:60px_60px]"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* LEFT */}
           <div className="animate-fadeUp text-center lg:text-left">
-            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-indigo-300 text-xs sm:text-sm font-semibold tracking-widest uppercase">
+            <div className="inline-flex items-center gap-3 px-5 py-2 bg-white/5 border border-white/10 backdrop-blur-xl text-indigo-300 text-xs sm:text-sm font-semibold tracking-widest uppercase">
               <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
               AYACODIA • Agence Digitale
             </div>
@@ -81,21 +70,14 @@ export default function Header() {
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5">
               <a
                 href="/contact"
-                className="group relative overflow-hidden rounded-2xl px-8 py-5 font-bold text-white transition-all duration-500"
+                className="w-full sm:w-[249px] text-center inset-0 bg-gradient-to-r from-indigo-500 via-blue-500 to-violet-600 group relative overflow-hidden px-8 py-5 font-bold text-white transition-all duration-500"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-blue-500 to-violet-600"></span>
-
-                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-blue-500 to-indigo-500 blur-xl"></span>
-
-                <span className="relative z-10 flex items-center gap-3 tracking-wide">
-                  Démarrer un projet
-                  <i className="bi bi-arrow-right text-xl group-hover:translate-x-1 transition duration-300"></i>
-                </span>
+                Démarrer un projet
               </a>
 
               <a
                 href="/services"
-                className="px-8 py-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500 font-semibold text-gray-200"
+                className="w-full sm:w-[249px] text-center px-8 py-5 border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500 font-semibold text-gray-200"
               >
                 Découvrir nos services
               </a>
@@ -112,9 +94,7 @@ export default function Header() {
                     {item.number}
                   </h3>
 
-                  <p className="mt-2 text-gray-400 text-sm">
-                    {item.label}
-                  </p>
+                  <p className="mt-2 text-gray-400 text-sm">{item.label}</p>
                 </div>
               ))}
             </div>
@@ -122,7 +102,7 @@ export default function Header() {
 
           {/* RIGHT */}
           <div className="relative animate-fadeRight">
-            <div className="relative rounded-[40px] border border-white/10 bg-white/[0.05] backdrop-blur-2xl p-6 sm:p-8 shadow-[0_20px_80px_rgba(79,70,229,0.2)]">
+            <div className="w-full relative border border-white/10 bg-white/[0.05] backdrop-blur-2xl p-6 sm:p-8 shadow-[0_20px_80px_rgba(79,70,229,0.2)]">
               <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-500/10 blur-[120px] rounded-full"></div>
 
               <img
@@ -132,19 +112,16 @@ export default function Header() {
               />
 
               <div className="relative z-10 mt-10 grid grid-cols-2 gap-4">
-                {[
-                  "Performance",
-                  "Sécurité",
-                  "Responsive",
-                  "Innovation",
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="rounded-2xl border border-white/10 bg-white/[0.05] p-4 text-center text-sm font-semibold text-gray-200 hover:bg-white/[0.08] transition duration-500"
-                  >
-                    {item}
-                  </div>
-                ))}
+                {["Performance", "Sécurité", "Responsive", "Innovation"].map(
+                  (item, index) => (
+                    <div
+                      key={index}
+                      className="rounded-2xl border border-white/10 bg-white/[0.05] p-4 text-center text-sm font-semibold text-gray-200 hover:bg-white/[0.08] transition duration-500"
+                    >
+                      {item}
+                    </div>
+                  ),
+                )}
               </div>
             </div>
           </div>
@@ -152,7 +129,8 @@ export default function Header() {
       </section>
 
       {/* SERVICES */}
-      <section className="relative py-24">
+      <hr />
+      <section className="relative py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
           <div className="text-center">
             <span className="text-indigo-400 font-bold uppercase tracking-[0.3em] text-sm">
@@ -171,76 +149,41 @@ export default function Header() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.04] backdrop-blur-xl p-8 hover:-translate-y-3 transition-all duration-700"
+                className="group relative overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-xl p-8 hover:-translate-y-3 transition-all duration-700"
               >
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-indigo-500/10 to-blue-500/10 transition duration-700"></div>
 
                 <div className="text-center relative z-10 flex flex-col items-center">
+                  {/* ICON */}
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition duration-500">
+                    <i
+                      className={`bi ${service.icon} text-white text-2xl leading-none`}
+                    ></i>
+                  </div>
 
-  {/* ICON */}
-  <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition duration-500">
-    <i className={`bi ${service.icon} text-white text-2xl leading-none`}></i>
-  </div>
+                  {/* TITLE */}
+                  <h3 className="mt-8 text-2xl font-black text-white">
+                    {service.title}
+                  </h3>
 
-  {/* TITLE */}
-  <h3 className="mt-8 text-2xl font-black text-white">
-    {service.title}
-  </h3>
-
-  {/* DESCRIPTION */}
-  <p className="mt-5 text-gray-400 leading-relaxed">
-    {service.description}
-  </p>
-
-</div>
+                  {/* DESCRIPTION */}
+                  <p className="mt-5 text-gray-400 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* TECHNOLOGIES */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-          <div className="rounded-[40px] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-10 sm:p-16 overflow-hidden relative">
-            <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-500/10 blur-[120px] rounded-full"></div>
-
-            <div className="relative z-10 text-center">
-              <span className="text-indigo-400 font-bold uppercase tracking-[0.3em] text-sm">
-                Technologies
-              </span>
-
-              <h2 className="mt-6 text-4xl sm:text-5xl font-black">
-                Stack moderne & performante
-              </h2>
-
-              <p className="mt-6 text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-                Nous utilisons les meilleures technologies pour développer des
-                produits rapides, évolutifs et sécurisés.
-              </p>
-
-              <div className="mt-14 flex flex-wrap justify-center gap-5">
-                {technologies.map((tech, index) => (
-                  <div
-                    key={index}
-                    className="px-6 py-4 rounded-2xl border border-white/10 bg-white/[0.05] text-gray-200 font-semibold hover:bg-indigo-500 hover:text-white hover:-translate-y-1 transition-all duration-500"
-                  >
-                    {tech}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="pb-24 px-4 sm:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto relative overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-indigo-600 to-blue-700 p-10 sm:p-16 text-center shadow-[0_20px_80px_rgba(79,70,229,0.4)]">
-          <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+      <section className="w-full pb-24 mx-auto px-4 sm:px-8 lg:px-12">
+        <div className="w-full max-w-7xl mx-auto relative overflow-hidden border border-white/10 bg-gradient-to-br from-indigo-600 to-blue-700 p-4 sm:p-16 text-center shadow-[0_20px_80px_rgba(79,70,229,0.4)]">
+          <div className="w-full absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:60px_60px]"></div>
 
           <div className="relative z-10">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight">
+            <h2 className="text-2xl sm:text-5xl lg:text-6xl font-black leading-tight">
               Vous avez un projet ?
             </h2>
 
@@ -252,14 +195,14 @@ export default function Header() {
             <div className="mt-10 flex flex-col sm:flex-row justify-center gap-5">
               <a
                 href="/contact"
-                className="px-8 py-5 rounded-2xl bg-white text-indigo-700 font-black hover:scale-105 transition-all duration-500"
+                className="px-8 py-5 bg-white text-indigo-700 font-black hover:scale-105 transition-all duration-500"
               >
                 Nous contacter
               </a>
 
               <a
                 href="https://abdulrahman-adam.com"
-                className="px-8 py-5 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-xl text-white font-semibold hover:bg-white/20 transition-all duration-500"
+                className="px-8 py-5 border border-white/20 bg-white/10 backdrop-blur-xl text-white font-semibold hover:bg-white/20 transition-all duration-500"
               >
                 Voir nos réalisations
               </a>
