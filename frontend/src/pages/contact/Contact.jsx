@@ -112,7 +112,7 @@ const Contact = () => {
           {/* LEFT SIDE */}
           <div className="animate-fadeLeft">
             {/* CARD */}
-            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-2xl p-7 sm:p-10">
+            <div className="relative overflow-hidden border bg-white/[0.03] backdrop-blur-2xl p-7 sm:p-10">
               <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-500/10 blur-[120px] rounded-full"></div>
 
               {/* LOGO */}
@@ -134,41 +134,7 @@ const Contact = () => {
                   performantes et pensées pour la croissance.
                 </p>
 
-                {/* FEATURES */}
-                <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {[
-                    {
-                      icon: "bi-window",
-                      title: "Applications Web",
-                    },
-                    {
-                      icon: "bi-phone",
-                      title: "Applications Mobile",
-                    },
-                    {
-                      icon: "bi-cart",
-                      title: "E-commerce",
-                    },
-                    {
-                      icon: "bi-lightning",
-                      title: "Solutions Performantes",
-                    },
-                  ].map((item, index) => (
-                    <div
-                      key={index}
-                      className="group rounded-2xl border border-white/10 bg-white/[0.04] p-5 hover:bg-white/[0.06] hover:-translate-y-1 transition-all duration-500"
-                    >
-                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition duration-500 block mx-auto">
-                        <i className={`bi ${item.icon} text-white text-xl`}></i>
-                      </div>
-
-                      <h3 className="mt-4 text-white font-bold text-lg">
-                        {item.title}
-                      </h3>
-                    </div>
-                  ))}
-                </div>
-
+              
                 {/* CONTACT INFO */}
                 <div className="mt-10 space-y-5">
                   <a
@@ -214,7 +180,7 @@ const Contact = () => {
 
           {/* RIGHT SIDE */}
           <div className="animate-fadeRight">
-            <div className="relative overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-2xl py-4 sm:p-10 lg:p-12 shadow-[0_20px_80px_rgba(79,70,229,0.2)]">
+            <div className="relative overflow-hidden bg-white/[0.04] backdrop-blur-2xl py-4 sm:p-10 lg:p-12 shadow-[0_20px_80px_rgba(79,70,229,0.2)]">
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-blue-500/5 pointer-events-none"></div>
 
               <div className="relative z-10">
