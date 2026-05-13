@@ -3,6 +3,7 @@ import CategoryDrillDown from '../../components/header/Header'
 
 import Header from '../../components/header/Header'
 import PartenaireList from '../../components/partenaireList/PartenaireList'
+import Accordion from '../../components/accordion/Accordion'
 
 
 
@@ -11,6 +12,7 @@ const Home = () => {
     <div>
       {/* <Hero /> */}
       <Header />
+      <Accordion />
       <PartenaireList />  
     </div>
   )
