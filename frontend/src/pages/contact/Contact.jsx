@@ -214,20 +214,20 @@ const Contact = () => {
 
           {/* RIGHT SIDE */}
           <div className="animate-fadeRight">
-            <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-7 sm:p-10 lg:p-12 shadow-[0_20px_80px_rgba(79,70,229,0.2)]">
+            <div className="relative overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-2xl py-4 sm:p-10 lg:p-12 shadow-[0_20px_80px_rgba(79,70,229,0.2)]">
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-blue-500/5 pointer-events-none"></div>
 
               <div className="relative z-10">
-                <div className="text-center inline-flex items-center gap-3 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-[0.2em]">
+                <div className="mx-[25%] text-center inline-flex items-center gap-3 px-4 py-2 bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-[0.2em]">
                   <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
                   Contact Rapide
                 </div>
 
-                <h2 className="text-center mt-6 text-3xl sm:text-5xl font-black text-white leading-tight">
+                <h2 className="text-center mt-6 text-2xl sm:text-5xl font-black text-white leading-tight">
                   Parlons de votre projet.
                 </h2>
 
-                <p className="mt-5 text-gray-400 text-sm sm:text-base leading-relaxed">
+                <p className="text-center mt-5 text-gray-400 text-sm sm:text-base leading-relaxed">
                   Décrivez votre besoin et notre équipe vous répondra rapidement
                   avec une solution adaptée à votre activité.
                 </p>
@@ -246,7 +246,7 @@ const Contact = () => {
                       <input
                         type="text"
                         placeholder="Prénom Nom"
-                        className="mt-3 w-full rounded-2xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-500 outline-none focus:border-indigo-500 focus:bg-white/[0.08] transition-all duration-300"
+                        className="mt-3 w-full bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-500 outline-none focus:border-indigo-500 focus:bg-white/[0.08] transition-all duration-300"
                         value={formData.name}
                         onChange={(e) =>
                           setFormData({
@@ -265,7 +265,7 @@ const Contact = () => {
                       <input
                         type="email"
                         placeholder="email@domaine.com"
-                        className="mt-3 w-full rounded-2xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-500 outline-none focus:border-indigo-500 focus:bg-white/[0.08] transition-all duration-300"
+                        className="mt-3 w-full bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-500 outline-none focus:border-indigo-500 focus:bg-white/[0.08] transition-all duration-300"
                         value={formData.email}
                         onChange={(e) =>
                           setFormData({
@@ -285,7 +285,7 @@ const Contact = () => {
                     <input
                       type="tel"
                       placeholder="+33 1 23 45 67 89"
-                      className="mt-3 w-full rounded-2xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-500 outline-none focus:border-indigo-500 focus:bg-white/[0.08] transition-all duration-300"
+                      className="mt-3 w-full bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-500 outline-none focus:border-indigo-500 focus:bg-white/[0.08] transition-all duration-300"
                       value={formData.telephone}
                       onChange={(e) =>
                         setFormData({
@@ -304,7 +304,7 @@ const Contact = () => {
                     <textarea
                       rows="6"
                       placeholder="Parlez-nous de votre projet..."
-                      className="mt-3 w-full rounded-2xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-500 outline-none focus:border-indigo-500 focus:bg-white/[0.08] transition-all duration-300 resize-none"
+                      className="mt-3 w-full bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-500 outline-none focus:border-indigo-500 focus:bg-white/[0.08] transition-all duration-300 resize-none"
                       value={formData.message}
                       onChange={(e) =>
                         setFormData({
@@ -318,7 +318,7 @@ const Contact = () => {
                   {/* BUTTON */}
                   <button
                     type="submit"
-                    className="group relative overflow-hidden rounded-2xl py-5 font-black tracking-[0.2em] text-white"
+                    className="group relative overflow-hidden py-5 font-black tracking-[0.2em] text-white"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-blue-500 to-violet-600"></span>
 
