@@ -3,6 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { assets } from "../../assets/assets";
 import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
+import ThemeToggle from "../themeToggle/ThemeToggle";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -74,6 +75,9 @@ const Navbar = () => {
             </NavLink>
           ))}
         </ul>
+
+
+        <ThemeToggle />
 
         {/* --- ACTIONS --- */}
         <div className="flex items-center gap-4 md:gap-6">

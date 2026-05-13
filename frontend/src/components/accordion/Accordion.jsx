@@ -2,18 +2,22 @@ import React, { useState } from "react";
 
 const AccordionItem = ({ title, content, isOpen, onClick }) => {
   return (
-    <div className="border-b border-white/5 overflow-hidden transition-all duration-500">
+    /* MODIFICATION : Bordure adaptative */
+    <div className="border-b border-slate-200 dark:border-white/5 overflow-hidden transition-all duration-500">
       <button
         onClick={onClick}
         className="w-full py-6 flex items-center justify-between text-left group transition-all duration-300"
       >
+        {/* MODIFICATION : Texte Slate-900 en clair, Gray-200/White en sombre */}
         <span className={`text-lg md:text-xl font-bold transition-all duration-300 ${
-          isOpen ? "text-indigo-400" : "text-gray-200 group-hover:text-white"
+          isOpen 
+            ? "text-indigo-600 dark:text-indigo-400" 
+            : "text-slate-700 dark:text-gray-200 group-hover:text-indigo-500 dark:group-hover:text-white"
         }`}>
           {title}
         </span>
         
-        {/* Icone + / - Animée */}
+        {/* Icone + / - Animée (Les couleurs indigo restent identiques) */}
         <div className={`relative flex items-center justify-center w-6 h-6 transform transition-transform duration-500 ${isOpen ? "rotate-180" : "rotate-0"}`}>
           <div className="absolute w-5 h-[2px] bg-indigo-500 rounded-full"></div>
           <div className={`absolute w-[2px] h-5 bg-indigo-500 rounded-full transition-transform duration-500 ${isOpen ? "rotate-90 opacity-0" : "rotate-0"}`}></div>
@@ -26,7 +30,8 @@ const AccordionItem = ({ title, content, isOpen, onClick }) => {
           isOpen ? "max-h-[500px] opacity-100 pb-8" : "max-h-0 opacity-0"
         }`}
       >
-        <p className="text-gray-400 leading-relaxed text-base md:text-lg max-w-4xl">
+        {/* MODIFICATION : Texte Slate-600 en clair, Gray-400 en sombre */}
+        <p className="text-slate-600 dark:text-gray-400 leading-relaxed text-base md:text-lg max-w-4xl">
           {content}
         </p>
       </div>
@@ -35,7 +40,7 @@ const AccordionItem = ({ title, content, isOpen, onClick }) => {
 };
 
 const Accordion = () => {
-  const [openIndex, setOpenIndex] = useState(0); // Le premier est ouvert par défaut
+  const [openIndex, setOpenIndex] = useState(0);
 
   const questions = [
     {
@@ -53,18 +58,21 @@ const Accordion = () => {
   ];
 
   return (
-    <section className="bg-[#020617] py-2 px-6">
+    /* MODIFICATION : Background adaptatif white -> #020617 */
+    <section className="bg-white dark:bg-[#020617] py-2 px-6 transition-colors duration-500">
       <div className="max-w-4xl mx-auto">
         {/* Header de la section */}
         <div className="mb-12">
-          <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
-            Expertise <span className="text-indigo-500">Digitale</span>
+          {/* MODIFICATION : Titre Slate-900 en clair, White en sombre */}
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tighter mb-4">
+            Expertise <span className="text-indigo-600 dark:text-indigo-500">Digitale</span>
           </h2>
           <div className="w-20 h-1.5 bg-indigo-600 rounded-full"></div>
         </div>
 
         {/* Liste des Accordions */}
-        <div className="flex flex-col border-t border-white/5">
+        {/* MODIFICATION : Bordure haute adaptative */}
+        <div className="flex flex-col border-t border-slate-200 dark:border-white/5">
           {questions.map((item, index) => (
             <AccordionItem
               key={index}

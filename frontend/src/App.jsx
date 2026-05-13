@@ -51,7 +51,8 @@ const App = () => {
 
   
   return (
-    <div className="text-default min-h-screen text-gray-700 bg-white">
+    // <div className="text-default min-h-screen text-gray-700 bg-white">
+    <div className="min-h-screen transition-colors duration-500 bg-white dark:bg-[#020617] text-gray-700 dark:text-gray-200">
       {!isSellerPath && <Navbar />}
       
       {showUserLogin && <Login />}
