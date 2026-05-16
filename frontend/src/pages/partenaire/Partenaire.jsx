@@ -78,12 +78,12 @@ const Partenaire = () => {
     {/* TITLE */}
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 text-center">
       
-      <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-indigo-300 text-xs sm:text-sm font-semibold tracking-widest uppercase">
+      <div className="inline-flex items-center gap-3 px-5 py-2 bg-white/5 border border-white/10 backdrop-blur-xl text-indigo-300 text-xs sm:text-sm font-semibold tracking-widest uppercase">
         <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
         Partenariat
       </div>
 
-      <h1 className="mt-8 text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
+      <h1 className="mt-8 text-3xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
         Devenir
         <span className="block bg-gradient-to-r from-indigo-400 via-blue-400 to-violet-400 bg-clip-text text-transparent">
           partenaire
