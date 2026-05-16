@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const AccordionItem = ({ title, content, isOpen, onClick }) => {
   return (
     /* MODIFICATION : Bordure adaptative */
-    <div className="border-b border-slate-200 dark:border-white/5 overflow-hidden transition-all duration-500">
+    <div className="w-full px-5 border-b border-slate-200 dark:border-white/5 overflow-hidden transition-all duration-500 bg-gray-100">
       <button
         onClick={onClick}
         className="w-full py-6 flex items-center justify-between text-left group transition-all duration-300"
@@ -59,8 +59,8 @@ const Accordion = () => {
 
   return (
     /* MODIFICATION : Background adaptatif white -> #020617 */
-    <section className="bg-white dark:bg-[#020617] py-2 px-6 transition-colors duration-500">
-      <div className="max-w-4xl mx-auto">
+    <section className="w-full mx-auto px-4 sm:px-8 lg:px-12 py-10 bg-white dark:bg-[#020617] py-2 transition-colors duration-500">
+      <div className="w-full">
         {/* Header de la section */}
         <div className="mb-12">
           {/* MODIFICATION : Titre Slate-900 en clair, White en sombre */}
@@ -72,7 +72,7 @@ const Accordion = () => {
 
         {/* Liste des Accordions */}
         {/* MODIFICATION : Bordure haute adaptative */}
-        <div className="flex flex-col border-t border-slate-200 dark:border-white/5">
+        <div className="w-full flex flex-col border-t border-slate-200 dark:border-white/5">
           {questions.map((item, index) => (
             <AccordionItem
               key={index}
@@ -80,6 +80,7 @@ const Accordion = () => {
               content={item.content}
               isOpen={openIndex === index}
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
+            
             />
           ))}
         </div>

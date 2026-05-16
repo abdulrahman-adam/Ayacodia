@@ -35,7 +35,7 @@ export default function Header() {
 
   return (
     /* MODIFICATION : bg-white par défaut, bg-[#020617] en dark mode */
-    <div className="bg-white dark:bg-[#020617] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden">
+    <div className="bg-gray-100 dark:bg-[#020617] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden">
       
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -119,7 +119,7 @@ export default function Header() {
                   (item, index) => (
                     <div
                       key={index}
-                      className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-100/50 dark:bg-white/[0.05] p-4 text-center text-sm font-semibold text-slate-700 dark:text-gray-200 hover:bg-slate-200 dark:hover:bg-white/[0.08] transition duration-500"
+                      className="border border-blue-600 dark:border-white/10 bg-slate-100/50 dark:bg-white/[0.05] p-4 text-center text-sm font-semibold text-slate-700 dark:text-gray-200 hover:bg-slate-200 dark:hover:bg-white/[0.08] transition duration-500"
                     >
                       {item}
                     </div>
@@ -182,7 +182,7 @@ export default function Header() {
 
       {/* CTA */}
       <section className="w-full pb-24 mx-auto px-4 sm:px-8 lg:px-12">
-        <div className="w-full max-w-7xl mx-auto relative overflow-hidden border border-white/10 bg-gradient-to-br from-indigo-600 to-blue-700 p-4 sm:p-16 text-center shadow-[0_20px_80px_rgba(79,70,229,0.4)]">
+        <div className="w-full max-w-7xl mx-auto relative overflow-hidden border border-white/10 bg-gradient-to-br from-blue-100 to-blue-700 p-4 sm:p-16 text-center shadow-[0_20px_80px_rgba(79,70,229,0.4)]">
           <div className="w-full absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:60px_60px]"></div>
 
           <div className="relative z-10">

@@ -9,7 +9,7 @@ import Accordion from '../../components/accordion/Accordion'
 
 const Home = () => {
   return (
-    <div>
+    <div className='bg-gray-100'>
       {/* <Hero /> */}
       <Header />
       <Accordion />
