@@ -72,225 +72,144 @@ const Contact = () => {
   };
 
   return (
-    /* Modification : bg-white par défaut, dark:bg-[#020617] pour le toggle */
-    <section className="relative overflow-hidden bg-white dark:bg-[#020617] py-16 sm:py-24 transition-colors duration-500">
-      {/* BACKGROUND EFFECTS */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-[-150px] left-[-120px] w-[350px] h-[350px] bg-indigo-600/20 blur-[120px] rounded-full animate-pulse"></div>
-
-        <div className="absolute bottom-[-180px] right-[-100px] w-[450px] h-[450px] bg-blue-500/10 blur-[150px] rounded-full animate-pulse delay-1000"></div>
-
-        {/* Grille adaptative */}
-        <div className="absolute inset-0 opacity-[0.05] dark:opacity-[0.03] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#fafafa] dark:bg-[#030712] py-20 px-4 sm:px-6 lg:px-8 transition-colors duration-700">
+      
+      {/* --- ELITE BACKGROUND SYSTEM --- */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-500/10 blur-[120px] rounded-full animate-pulse"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-600/10 blur-[120px] rounded-full animate-pulse transition-delay-2000"></div>
+        
+        {/* Architectural Grid */}
+        <div className="absolute inset-0 opacity-[0.15] dark:opacity-[0.05] [mask-image:radial-gradient(ellipse_at_center,black,transparent)] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px]"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-        {/* HEADER */}
-        <div className="text-center mb-16 animate-fadeUp">
-          <div className="inline-flex items-center gap-3 px-5 py-2 bg-indigo-50 dark:bg-white/5 border border-indigo-100 dark:border-white/10 backdrop-blur-xl text-indigo-600 dark:text-indigo-300 text-xs sm:text-sm font-semibold tracking-widest uppercase">
-            <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
-            AYACODIA • Agence Digitale
+      <div className="relative z-10 max-w-7xl mx-auto">
+        
+        {/* --- HEADER SECTION --- */}
+        <div className="text-center mb-16 space-y-4 animate-fadeUp">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white dark:bg-white/5 border border-indigo-100 dark:border-white/10 shadow-sm backdrop-blur-md">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+            </span>
+            <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-indigo-600 dark:text-indigo-400 uppercase">
+              AYACODIA • Future Ready
+            </span>
           </div>
 
-          <h1 className="mt-8 text-4xl sm:text-5xl lg:text-7xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">
-            Donnez vie à vos
-            <span className="block bg-gradient-to-r from-indigo-600 via-blue-500 to-violet-600 dark:from-indigo-400 dark:via-blue-400 dark:to-violet-400 bg-clip-text text-transparent">
-              projets digitaux.
+          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter">
+            Parlons de votre <br />
+            <span className="bg-gradient-to-r from-indigo-600 via-violet-500 to-blue-600 bg-clip-text text-transparent italic">
+              prochaine victoire.
             </span>
           </h1>
-
-          <p className="mt-8 text-slate-600 dark:text-gray-400 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed">
-            Applications web, plateformes e-commerce, applications mobiles,
-            solutions métiers et accompagnement digital.
-            <span className="text-slate-900 dark:text-white font-semibold">
-              {" "}
-              AYACODIA transforme vos idées en expériences modernes et performantes.
-            </span>
-          </p>
         </div>
 
-        {/* CONTENT */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          {/* LEFT SIDE */}
-          <div className="animate-fadeLeft">
-            {/* CARD */}
-            <div className="relative overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-50/50 dark:bg-white/[0.03] backdrop-blur-2xl p-7 sm:p-10">
-              <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-500/10 blur-[120px] rounded-full"></div>
+        {/* --- MAIN GRID --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+          
+          {/* INFO SIDE (LEFT) */}
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-8 animate-fadeLeft">
+            <div className="p-8 sm:p-12 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-3xl relative overflow-hidden group">
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500/10 blur-3xl rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+              
+              <img
+                src="/logo.png"
+                alt="AYACODIA"
+                className="w-48 sm:w-64 mb-10 object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+              />
 
-              {/* LOGO */}
-              <div className="text-center relative z-10">
-                <img
-                  src="/logo.png"
-                  alt="AYACODIA"
-                  className="mx-auto w-[220px] sm:w-[280px] object-contain drop-shadow-[0_0_25px_rgba(99,102,241,0.2)] dark:drop-shadow-[0_0_25px_rgba(99,102,241,0.4)] hover:scale-105 transition duration-500"
-                />
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white leading-tight mb-6">
+                Transformons vos idées en <span className="text-indigo-500">réalité digitale.</span>
+              </h2>
 
-                <h2 className="mt-10 text-3xl sm:text-4xl font-black text-slate-900 dark:text-white leading-tight">
-                  Une équipe dédiée à votre réussite digitale.
-                </h2>
+              <div className="space-y-6">
+                <a href="mailto:info@ayacodia.com" className="flex items-center gap-4 group/item">
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-500/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400 group-hover/item:bg-indigo-600 group-hover/item:text-white transition-all duration-300">
+                    <i className="bi bi-envelope-at-fill text-lg"></i>
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400">Email</p>
+                    <p className="text-slate-900 dark:text-white font-medium">info@ayacodia.com</p>
+                  </div>
+                </a>
 
-                <p className="mt-6 text-slate-600 dark:text-gray-400 leading-relaxed text-sm sm:text-base">
-                  Nous accompagnons les entreprises, startups et commerces dans
-                  la création de solutions modernes, rapides et sécurisées.
-                  Notre mission est de construire des plateformes élégantes,
-                  performantes et pensées pour la croissance.
-                </p>
-
-                {/* CONTACT INFO */}
-                <div className="mt-10 space-y-5">
-                  <a
-                    href="mailto:info@ayacodia.com"
-                    className="group flex items-center gap-5 text-left"
-                  >
-                    <div className="w-14 h-14 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500 shadow-sm">
-                      <i className="bi bi-envelope-fill text-xl"></i>
-                    </div>
-
-                    <div>
-                      <p className="text-slate-500 text-sm">Email</p>
-                      <p className="text-slate-900 dark:text-white font-semibold group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">
-                        info@ayacodia.com
-                      </p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://maps.app.goo.gl/zx4vu5CTeVUuf15h6"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group flex items-center gap-5 text-left"
-                  >
-                    <div className="w-14 h-14 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500 shadow-sm">
-                      <i className="bi bi-geo-alt-fill text-xl"></i>
-                    </div>
-
-                    <div>
-                      <p className="text-slate-500 text-sm">Adresse</p>
-                      <p className="text-slate-900 dark:text-white font-semibold group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">
-                        68 bis Rue jean mermoz 91230 Montgeron
-                      </p>
-                    </div>
-                  </a>
-                </div>
+                <a href="#" className="flex items-center gap-4 group/item">
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-500/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400 group-hover/item:bg-indigo-600 group-hover/item:text-white transition-all duration-300">
+                    <i className="bi bi-geo-alt-fill text-lg"></i>
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400">Localisation</p>
+                    <p className="text-slate-900 dark:text-white font-medium leading-tight">68 bis Rue jean mermoz<br/>91230 Montgeron</p>
+                  </div>
+                </a>
               </div>
             </div>
+
           </div>
 
-          {/* RIGHT SIDE */}
-          <div className="animate-fadeRight">
-            <div className="relative overflow-hidden bg-slate-50 dark:bg-white/[0.04] backdrop-blur-2xl py-4 sm:p-10 lg:p-12 border border-slate-200 dark:border-transparent shadow-xl dark:shadow-[0_20px_80px_rgba(79,70,229,0.2)]">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-blue-500/5 pointer-events-none"></div>
-
-              <div className="relative z-10">
-                <div className="mx-auto text-center inline-flex items-center gap-3 px-4 py-2 bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-300 text-xs font-bold uppercase tracking-[0.2em]">
-                  <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
-                  Contact Rapide
-                </div>
-
-                <h2 className="text-center mt-6 text-2xl sm:text-5xl font-black text-slate-900 dark:text-white leading-tight">
-                  Parlons de votre projet.
-                </h2>
-
-                <p className="text-center mt-5 text-slate-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
-                  Décrivez votre besoin et notre équipe vous répondra rapidement
-                  avec une solution adaptée à votre activité.
-                </p>
-
-                {/* FORM */}
-                <form
-                  onSubmit={handleSubmit}
-                  className="mt-10 flex flex-col gap-6"
-                >
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="group text-left">
-                      <label className="text-xs uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-300 font-bold">
-                        Nom complet
-                      </label>
-
+          {/* FORM SIDE (RIGHT) */}
+          <div className="lg:col-span-7 animate-fadeRight">
+            <div className="relative group">
+              {/* Outer Glow Effect */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+              
+              <div className="relative bg-white dark:bg-[#0b0f1a] border border-slate-200 dark:border-white/5 p-6 sm:p-12 shadow-2xl">
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="relative">
+                      <label className="block text-[10px] font-black uppercase tracking-widest text-indigo-500 mb-2 ml-1">Nom Complet</label>
                       <input
                         type="text"
-                        placeholder="Prénom Nom"
-                        className="mt-3 w-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-gray-500 outline-none focus:border-indigo-500 transition-all duration-300"
+                        placeholder="John Doe"
+                        className="w-full bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 px-6 py-4 text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all placeholder:text-slate-400/50"
                         value={formData.name}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            name: e.target.value,
-                          })
-                        }
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       />
                     </div>
-
-                    <div className="group text-left">
-                      <label className="text-xs uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-300 font-bold">
-                        Email
-                      </label>
-
+                    <div className="relative">
+                      <label className="block text-[10px] font-black uppercase tracking-widest text-indigo-500 mb-2 ml-1">Adresse Email</label>
                       <input
                         type="email"
-                        placeholder="email@domaine.com"
-                        className="mt-3 w-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-gray-500 outline-none focus:border-indigo-500 transition-all duration-300"
+                        placeholder="hello@world.com"
+                        className="w-full bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 px-6 py-4 text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all placeholder:text-slate-400/50"
                         value={formData.email}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            email: e.target.value,
-                          })
-                        }
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       />
                     </div>
                   </div>
 
-                  <div className="text-left">
-                    <label className="text-xs uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-300 font-bold">
-                      Téléphone
-                    </label>
-
+                  <div className="relative">
+                    <label className="block text-[10px] font-black uppercase tracking-widest text-indigo-500 mb-2 ml-1">Téléphone</label>
                     <input
                       type="tel"
-                      placeholder="+33 1 23 45 67 89"
-                      className="mt-3 w-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-gray-500 outline-none focus:border-indigo-500 transition-all duration-300"
+                      placeholder="+33 6 00 00 00 00"
+                      className="w-full bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 px-6 py-4 text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all placeholder:text-slate-400/50"
                       value={formData.telephone}
-                      onChange={(e) =>
-                        setFormData({
-                          ...formData,
-                          telephone: e.target.value,
-                        })
-                      }
+                      onChange={(e) => setFormData({ ...formData, telephone: e.target.value })}
                     />
                   </div>
 
-                  <div className="text-left">
-                    <label className="text-xs uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-300 font-bold">
-                      Message
-                    </label>
-
+                  <div className="relative">
+                    <label className="block text-[10px] font-black uppercase tracking-widest text-indigo-500 mb-2 ml-1">Détails du projet</label>
                     <textarea
-                      rows="6"
-                      placeholder="Parlez-nous de votre projet..."
-                      className="mt-3 w-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-gray-500 outline-none focus:border-indigo-500 transition-all duration-300 resize-none"
+                      rows="5"
+                      placeholder="Décrivez vos ambitions..."
+                      className="w-full bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 px-6 py-4 text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all resize-none placeholder:text-slate-400/50"
                       value={formData.message}
-                      onChange={(e) =>
-                        setFormData({
-                          ...formData,
-                          message: e.target.value,
-                        })
-                      }
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     ></textarea>
                   </div>
 
-                  {/* BUTTON */}
                   <button
                     type="submit"
-                    className="group relative overflow-hidden py-5 font-black tracking-[0.2em] text-white"
+                    className="w-full group relative flex items-center justify-center p-0.5 overflow-hidden font-bold transition-all duration-500 active:scale-[0.98]"
                   >
-                    <span className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-blue-600 to-violet-600"></span>
-
-                    <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-blue-500 to-indigo-500 blur-xl"></span>
-
-                    <span className="relative z-10 flex items-center justify-center gap-3 text-sm sm:text-base">
-                      ENVOYER LE MESSAGE
-                      <i className="bi bi-arrow-right text-xl group-hover:translate-x-1 transition duration-300"></i>
+                    <span className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-600 group-hover:scale-110 transition-transform duration-500"></span>
+                    <span className="relative w-full bg-[#0b0f1a]/10 dark:bg-transparent py-5 rounded-2xl flex items-center justify-center gap-3 text-white tracking-widest text-sm">
+                      LANCER LE PROJET
+                      <i className="bi bi-rocket-takeoff-fill text-lg group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300"></i>
                     </span>
                   </button>
                 </form>
@@ -300,23 +219,22 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* ANIMATIONS */}
       <style jsx="true">{`
         @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(40px); }
+          from { opacity: 0; transform: translateY(30px); }
           to { opacity: 1; transform: translateY(0); }
         }
         @keyframes fadeLeft {
-          from { opacity: 0; transform: translateX(-40px); }
+          from { opacity: 0; transform: translateX(-30px); }
           to { opacity: 1; transform: translateX(0); }
         }
         @keyframes fadeRight {
-          from { opacity: 0; transform: translateX(40px); }
+          from { opacity: 0; transform: translateX(30px); }
           to { opacity: 1; transform: translateX(0); }
         }
-        .animate-fadeUp { animation: fadeUp 0.9s ease forwards; }
-        .animate-fadeLeft { animation: fadeLeft 1s ease forwards; }
-        .animate-fadeRight { animation: fadeRight 1s ease forwards; }
+        .animate-fadeUp { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .animate-fadeLeft { animation: fadeLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; opacity: 0; }
+        .animate-fadeRight { animation: fadeRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards; opacity: 0; }
       `}</style>
     </section>
   );
