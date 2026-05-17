@@ -85,6 +85,7 @@ const subsystems = [
 ];
 
 export default function ServicesData() {
+  
   const [activeSystem, setActiveSystem] = useState(0);
 
   return (
@@ -259,121 +260,119 @@ export default function ServicesData() {
                 </div>
 
                 {/* MOBILE MIRACLE UI */}
-                {/* MOBILE MIRACLE UI */}
+              
 <div className="sm:hidden flex flex-col gap-4">
-  {subsystems.map((item, index) => (
-    <div
-      key={index}
-      className={`relative overflow-hidden border rounded-3xl transition-all duration-700 ${
-        activeSystem === index
-          ? "border-emerald-500/40 shadow-[0_10px_40px_rgba(16,185,129,0.18)] bg-slate-900/90"
-          : "border-slate-700/40 bg-slate-900/60"
-      }`}
-    >
-      {/* CLICKABLE HEADER */}
-      <button
-        onClick={() =>
-          setActiveSystem(activeSystem === index ? -1 : index)
-        }
-        className="w-full relative z-10 p-5 text-left"
-      >
-        {/* Animated Background */}
-        <div
-          className={`absolute inset-0 transition-all duration-700 ${
-            activeSystem === index
-              ? "opacity-100 bg-gradient-to-br from-emerald-500/10 via-cyan-500/5 to-transparent"
-              : "opacity-0"
-          }`}
-        />
+  {subsystems.map((item, index) => {
+    const isOpen = activeSystem === index;
 
-        {/* Glow Effect */}
-        <div
-          className={`absolute -top-10 -right-10 w-32 h-32 rounded-full blur-3xl transition-all duration-700 ${
-            activeSystem === index
-              ? "bg-emerald-500/20 opacity-100"
-              : "opacity-0"
-          }`}
-        />
-
-        <div className="relative z-10 flex items-center justify-between">
-          <div>
-            <p
-              className={`text-xs font-bold uppercase tracking-[0.25em] ${
-                activeSystem === index
-                  ? "text-emerald-400"
-                  : "text-slate-500"
-              }`}
-            >
-              {item.level}
-            </p>
-
-            <h4
-              className={`mt-2 text-lg font-bold transition-all duration-500 ${
-                activeSystem === index
-                  ? "text-white"
-                  : "text-slate-300"
-              }`}
-            >
-              {item.tech}
-            </h4>
-          </div>
-
-          {/* ICON */}
-          <div
-            className={`p-3 rounded-2xl transition-all duration-700 ${
-              activeSystem === index
-                ? "bg-emerald-500/20 text-emerald-400 rotate-180 scale-110"
-                : "bg-slate-800 text-slate-500"
-            }`}
-          >
-            <svg
-              className="w-5 h-5 transition-all duration-700"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </div>
-        </div>
-      </button>
-
-      {/* EXPANDABLE CONTENT */}
+    return (
       <div
-        className={`grid transition-all duration-700 ease-in-out ${
-          activeSystem === index
-            ? "grid-rows-[1fr] opacity-100"
-            : "grid-rows-[0fr] opacity-0"
+        key={index}
+        className={`relative overflow-hidden border rounded-3xl transition-all duration-700 ${
+          isOpen
+            ? "border-emerald-500/40 shadow-[0_10px_40px_rgba(16,185,129,0.18)] bg-slate-900/90"
+            : "border-slate-700/40 bg-slate-900/60"
         }`}
       >
-        <div className="overflow-hidden">
-          <div className="px-5 pb-5">
-            {/* STATUS */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-[10px] font-semibold text-emerald-400 uppercase tracking-widest">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              Architecture active
+        {/* CLICKABLE HEADER */}
+        <button
+          onClick={() =>
+            setActiveSystem(isOpen ? -1 : index)
+          }
+          className="w-full relative z-10 p-5 text-left"
+        >
+          {/* Animated Background */}
+          <div
+            className={`absolute inset-0 transition-all duration-700 ${
+              isOpen
+                ? "opacity-100 bg-gradient-to-br from-emerald-500/10 via-cyan-500/5 to-transparent"
+                : "opacity-0"
+            }`}
+          />
+
+          {/* Glow Effect */}
+          <div
+            className={`absolute -top-10 -right-10 w-32 h-32 rounded-full blur-3xl transition-all duration-700 ${
+              isOpen
+                ? "bg-emerald-500/20 opacity-100"
+                : "opacity-0"
+            }`}
+          />
+
+          <div className="relative z-10 flex items-center justify-between">
+            <div>
+              <p
+                className={`text-xs font-bold uppercase tracking-[0.25em] ${
+                  isOpen ? "text-emerald-400" : "text-slate-500"
+                }`}
+              >
+                {item.level}
+              </p>
+
+              <h4
+                className={`mt-2 text-lg font-bold transition-all duration-500 ${
+                  isOpen ? "text-white" : "text-slate-300"
+                }`}
+              >
+                {item.tech}
+              </h4>
             </div>
 
-            {/* DESCRIPTION */}
-            <p className="mt-5 text-sm text-slate-400 leading-relaxed animate-fadeSwitch">
-              {item.desc}
-            </p>
-
-            {/* TECH FOOTER */}
-            <div className="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[10px] text-slate-500 font-mono">
-              <span>STATUS: OPTIMIZED</span>
-              <span>SCALE: 0{index + 1} // NEXT_GEN</span>
+            <div
+              className={`p-3 rounded-2xl transition-all duration-700 ${
+                isOpen
+                  ? "bg-emerald-500/20 text-emerald-400 rotate-180 scale-110"
+                  : "bg-slate-800 text-slate-500"
+              }`}
+            >
+              <svg
+                className="w-5 h-5 transition-all duration-700"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
             </div>
           </div>
-        </div>
+        </button>
+
+        {/* EXPANDABLE CONTENT (SMOOTH ACCORDION FIX) */}
+        {/* EXPANDABLE CONTENT - FIXED STABLE VERSION */}
+<div
+  className={`grid transition-all duration-700 ease-in-out ${
+    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+  }`}
+>
+  <div className="overflow-hidden">
+    <div className="px-5 pb-5">
+      {/* STATUS */}
+      <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-[10px] font-semibold text-emerald-400 uppercase tracking-widest">
+        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+        Architecture active
+      </div>
+
+      {/* DESCRIPTION */}
+      <p className="mt-5 text-sm text-slate-400 leading-relaxed animate-fadeSwitch">
+        {item.desc}
+      </p>
+
+      {/* FOOTER */}
+      <div className="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[10px] text-slate-500 font-mono">
+        <span>STATUS: OPTIMIZED</span>
+        <span>SCALE: 0{index + 1} // NEXT_GEN</span>
       </div>
     </div>
-  ))}
+  </div>
+</div>
+      </div>
+    );
+  })}
 </div>
 
                 {/* RIGHT PANEL LARGE/TABLET */}
@@ -395,11 +394,11 @@ export default function ServicesData() {
                     </div>
 
                     <h4 className="mt-5 text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                      {subsystems[activeSystem].tech}
+                      {subsystems[activeSystem]?.tech}
                     </h4>
 
                     <p className="mt-4 text-sm sm:text-base text-slate-400 font-light leading-relaxed max-w-xl">
-                      {subsystems[activeSystem].desc}
+                     {subsystems[activeSystem]?.desc}
                     </p>
                   </div>
 

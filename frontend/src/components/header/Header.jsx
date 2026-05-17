@@ -1,3 +1,5 @@
+import ServicesData from "../serviceData/ServiceData";
+
 export default function Header() {
   const services = [
     {
@@ -141,6 +143,7 @@ export default function Header() {
         </div>
       </section>
 
+<ServicesData />
       {/* SERVICES */}
       <hr className="border-slate-200 dark:border-white/100" />
 
