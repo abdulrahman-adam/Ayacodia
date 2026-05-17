@@ -59,7 +59,7 @@ const Accordion = () => {
 
   return (
     /* MODIFICATION : Background adaptatif white -> #020617 */
-    <section className="w-full mx-auto px-4 sm:px-8 lg:px-12 py-10 bg-white dark:bg-[#020617] py-2 transition-colors duration-500">
+    <section className="w-full mx-auto px-4 sm:px-8 lg:px-12 py-10 bg-gray-100 dark:bg-[#020617] py-2 transition-colors duration-500">
       <div className="w-full">
         {/* Header de la section */}
         <div className="mb-12">

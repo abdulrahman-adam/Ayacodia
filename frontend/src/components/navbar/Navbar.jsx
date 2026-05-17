@@ -77,7 +77,7 @@ const Navbar = () => {
         </ul>
 
 
-        <ThemeToggle />
+       
 
         {/* --- ACTIONS --- */}
         <div className="flex items-center gap-4 md:gap-6">
