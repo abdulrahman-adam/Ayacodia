@@ -53,19 +53,19 @@ const Services = () => {
     <div className="bg-white dark:bg-[#020617] text-slate-900 dark:text-white overflow-hidden transition-colors duration-500">
       
       {/* --- HERO SECTION (CENTRAGE TOTAL) --- */}
-      <section className="relative overflow-hidden py-20 sm:py-32">
+      <section className="relative overflow-hidden py-6">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] bg-indigo-600/10 dark:bg-indigo-600/20 blur-[120px] rounded-full animate-pulse"></div>
           <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-blue-500/5 dark:bg-blue-500/10 blur-[150px] rounded-full animate-pulse delay-700"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center flex flex-col items-center">
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-md text-indigo-600 dark:text-indigo-300 text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase animate-fadeUp">
+          <div className="inline-flex items-center gap-3 px-4 py-2 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-md text-indigo-600 dark:text-indigo-300 text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase animate-fadeUp">
             <span className="w-2 h-2 rounded-full bg-indigo-500 animate-ping"></span>
             AYACODIA • Expertise
           </div>
 
-          <h1 className="mt-8 text-4xl sm:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight animate-fadeUp max-w-5xl">
+          <h1 className="mt-6 text-2xl sm:text-5xl lg:text-5xl font-black leading-[1.1] tracking-tight animate-fadeUp max-w-5xl">
             Des services digitaux
             <span className="block bg-gradient-to-r from-indigo-600 via-blue-600 to-violet-600 dark:from-indigo-400 dark:via-blue-400 dark:to-violet-400 bg-clip-text text-transparent">
               puissants & modernes.
@@ -78,39 +78,8 @@ const Services = () => {
         </div>
       </section>
 
-      {/* --- SERVICES GRID (CENTRAGE MOBILE) --- */}
-      <section className="relative pb-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-[32px] border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.03] p-8 flex flex-col items-center text-center hover:-translate-y-2 transition-all duration-500 shadow-sm">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center shadow-lg mb-6 group-hover:rotate-6 transition-transform">
-                  <i className={`bi ${service.icon} text-white text-2xl`}></i>
-                </div>
-
-                <h2 className="text-2xl font-black text-slate-900 dark:text-white mb-4">{service.title}</h2>
-                <p className="text-slate-600 dark:text-gray-400 text-sm leading-relaxed mb-8">{service.description}</p>
-
-                <div className="space-y-3 w-full flex flex-col items-center mb-8">
-                  {service.features.map((feature, i) => (
-                    <div key={i} className="flex items-center gap-2 text-slate-700 dark:text-gray-300 text-sm font-medium">
-                      <i className="bi bi-check2-circle text-indigo-500"></i>
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <button className="mt-auto w-full py-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold transition-all shadow-md shadow-indigo-500/20 active:scale-95">
-                  En savoir plus
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* --- PROCESS (CENTRAGE MOBILE) --- */}
-      <section className="py-24 bg-slate-50/50 dark:bg-white/[0.01]">
+      <section className="py-6 bg-slate-50/50 dark:bg-white/[0.01]">
         <div className="max-w-7xl mx-auto px-6 text-center flex flex-col items-center">
           <span className="text-indigo-600 dark:text-indigo-400 font-bold uppercase tracking-[0.3em] text-xs">Notre Process</span>
           <h2 className="mt-4 text-3xl sm:text-5xl font-black text-slate-900 dark:text-white leading-tight">

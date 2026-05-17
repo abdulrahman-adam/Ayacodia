@@ -62,10 +62,10 @@ const Partenaire = () => {
   };
 
   return (
-    <div className="bg-[#020617] text-white overflow-hidden">
+    <div className="bg-gray-100 overflow-hidden">
 
   {/* HERO SECTION */}
-  <section className="relative py-24 sm:py-32 overflow-hidden">
+  <section className="relative py-6 sm:py-10 overflow-hidden">
 
     {/* Background effects */}
     <div className="absolute inset-0">
@@ -78,15 +78,15 @@ const Partenaire = () => {
     {/* TITLE */}
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 text-center">
       
-      <div className="inline-flex items-center gap-3 px-5 py-2 bg-white/5 border border-white/10 backdrop-blur-xl text-indigo-300 text-xs sm:text-sm font-semibold tracking-widest uppercase">
+      <div className="inline-flex items-center gap-3 px-5 bg-white-700 border border-white/10 backdrop-blur-xl text-indigo-300 text-xs sm:text-sm font-semibold tracking-widest uppercase">
         <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
         Partenariat
       </div>
 
-      <h1 className="mt-8 text-3xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
+      <h1 className="mt-2 text-3xl sm:text-5xl lg:text-5xl font-black leading-tight tracking-tight">
         Devenir
-        <span className="block bg-gradient-to-r from-indigo-400 via-blue-400 to-violet-400 bg-clip-text text-transparent">
-          partenaire
+        &nbsp;<span className="bg-gradient-to-r from-indigo-400 via-blue-400 to-violet-400 bg-clip-text text-transparent">
+          Partenaire
         </span>
       </h1>
 
@@ -134,18 +134,19 @@ const Partenaire = () => {
       {/* RIGHT - FORM */}
       <div className="relative">
 
-        <div className="relative overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-8 sm:p-10">
+        <div className="relative overflow-hidden border border-green-100 bg-white/[0.04] backdrop-blur-2xl p-6 sm:p-10">
 
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-blue-500/10"></div>
 
-          <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
+          <form onSubmit={handleSubmit} className="w-full relative z-10 space-y-8">
 
             <input
               type="text"
               placeholder="Nom de l'entreprise"
-              className="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 outline-none"
+              className="w-full p-4 bg-white/5 border border-green-300 focus:border-indigo-500 outline-none"
               onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
               value={formData.companyName}
+             
             />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -153,7 +154,7 @@ const Partenaire = () => {
               <input
                 type="text"
                 placeholder="SIRET"
-                className="p-4 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 outline-none"
+                className="w-full p-4 bg-white/5 border border-green-300 focus:border-indigo-500 outline-none"
                 onChange={(e) => setFormData({ ...formData, siret: e.target.value })}
                 value={formData.siret}
               />
@@ -161,7 +162,7 @@ const Partenaire = () => {
               <input
                 type="text"
                 placeholder="Secteur"
-                className="p-4 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 outline-none"
+                className="p-4 bg-white/5 border border-green-300 focus:border-indigo-500 outline-none"
                 onChange={(e) => setFormData({ ...formData, profession: e.target.value })}
                 value={formData.profession}
               />
@@ -170,7 +171,7 @@ const Partenaire = () => {
             <input
               type="email"
               placeholder="Email professionnel"
-              className="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 outline-none"
+              className="w-full p-4 bg-white/5 border border-green-300 focus:border-indigo-500 outline-none"
               onChange={(e) => setFormData({ ...formData, contactEmail: e.target.value })}
               value={formData.contactEmail}
             />
@@ -178,14 +179,14 @@ const Partenaire = () => {
             <textarea
               rows="4"
               placeholder="Pourquoi nous rejoindre ?"
-              className="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 outline-none resize-none"
+              className="w-full p-4 bg-white/5 border border-green-300 focus:border-indigo-500 outline-none resize-none"
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               value={formData.description}
             />
 
             <button
               type="submit"
-              className="w-full py-4 rounded-xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 hover:scale-[1.02] transition-all"
+              className="text-white w-full py-4 font-bold bg-gradient-to-r from-indigo-600 to-blue-600 hover:scale-[1.02] transition-all"
             >
               SOUMETTRE
             </button>

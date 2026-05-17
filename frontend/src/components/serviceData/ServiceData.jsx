@@ -49,7 +49,7 @@ export default function ServicesData() {
   const [activeSystem, setActiveSystem] = useState(0);
 
   return (
-    <section className="min-h-screen bg-slate-900 text-slate-100 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden font-sans selection:bg-cyan-500 selection:text-slate-900">
+    <section className="min-h-screen bg-slate-900 text-slate-100 py-10 px-4 sm:px-6 lg:px-8 overflow-hidden font-sans selection:bg-cyan-500 selection:text-slate-900">
       <div className="max-w-7xl rectangular-blur mx-auto relative">
         
         {/* Effets de lumière en arrière-plan (Glow effect) */}
@@ -70,7 +70,7 @@ export default function ServicesData() {
         </div>
 
         {/* Grille principale des Services Majeurs */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 text-center">
           {servicesData.filter(s => !s.hasSubsystems).map((service) => (
             <div 
               key={service.id}
@@ -79,14 +79,14 @@ export default function ServicesData() {
               {/* Overlay de gradient au hover */}
               <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500`} />
               
-              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
-                <div className={`p-3.5 rounded-2xl bg-gradient-to-br ${service.gradient} text-white shadow-lg shadow-blue-500/10 group-hover:scale-110 transition-transform duration-500 ease-out inline-block self-start`}>
-                  {service.icon}
-                </div>
-                <span className="text-xs font-semibold px-3 py-1 bg-slate-700/40 text-slate-300 rounded-full border border-slate-600/30 self-start">
-                  {service.badge}
-                </span>
-              </div>
+              <div className="flex flex-row items-center justify-between gap-4 mb-6">
+  <div className={`p-3.5 rounded-2xl bg-gradient-to-br ${service.gradient} text-white shadow-lg shadow-blue-500/10 group-hover:scale-110 transition-transform duration-500 ease-out inline-block`}>
+    {service.icon}
+  </div>
+  <span className="text-xs font-semibold px-3 py-1 bg-slate-700/40 text-slate-300 rounded-full border border-slate-600/30">
+    {service.badge}
+  </span>
+</div>
 
               <div className="space-y-3">
                 <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">{service.subtitle}</span>
@@ -98,13 +98,7 @@ export default function ServicesData() {
                 </p>
               </div>
 
-              {/* Bouton subtil d'action */}
-              <div className="mt-6 pt-6 border-t border-slate-700/30 flex items-center text-cyan-400 text-sm font-semibold group-hover:text-cyan-300 transition-colors">
-                En savoir plus 
-                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </div>
+            
             </div>
           ))}
         </div>

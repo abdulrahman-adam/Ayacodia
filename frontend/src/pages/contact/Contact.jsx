@@ -72,16 +72,8 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#fafafa] dark:bg-[#030712] py-20 px-4 sm:px-6 lg:px-8 transition-colors duration-700">
-      
-      {/* --- ELITE BACKGROUND SYSTEM --- */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-500/10 blur-[120px] rounded-full animate-pulse"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-600/10 blur-[120px] rounded-full animate-pulse transition-delay-2000"></div>
-        
-        {/* Architectural Grid */}
-        <div className="absolute inset-0 opacity-[0.15] dark:opacity-[0.05] [mask-image:radial-gradient(ellipse_at_center,black,transparent)] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-100 py-6 px-4 sm:px-6 lg:px-8 transition-colors duration-700">
+  
 
       <div className="relative z-10 max-w-7xl mx-auto">
         
@@ -97,7 +89,7 @@ const Contact = () => {
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter">
+          <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tighter">
             Parlons de votre <br />
             <span className="bg-gradient-to-r from-indigo-600 via-violet-500 to-blue-600 bg-clip-text text-transparent italic">
               prochaine victoire.
@@ -140,7 +132,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400">Localisation</p>
-                    <p className="text-slate-900 dark:text-white font-medium leading-tight">68 bis Rue jean mermoz<br/>91230 Montgeron</p>
+                    <p className="text-slate-900 dark:text-white font-medium leading-tight">52 rue de quercy<br/>91230 Montgeron</p>
                   </div>
                 </a>
               </div>
@@ -154,7 +146,7 @@ const Contact = () => {
               {/* Outer Glow Effect */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
               
-              <div className="relative bg-white dark:bg-[#0b0f1a] border border-slate-200 dark:border-white/5 p-6 sm:p-12 shadow-2xl">
+              <div className="relative bg-white border border-slate-200 dark:border-white/5 p-6 sm:p-12 shadow-2xl">
                 <form onSubmit={handleSubmit} className="space-y-8">
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
