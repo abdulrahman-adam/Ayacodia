@@ -20,9 +20,9 @@ const CookieBanner = () => {
   if (!visible) return null;
 
   return (
-    <div className="w-full fixed bottom-50 left-0 z-[10000] pointer-events-none bg-gray-200">
+    <div className="w-full fixed bottom-50 left-0 z-[10000] pointer-events-none bg-fuchsia-300">
       <div className="pointer-events-auto bg-gray-200">
-        <div className="w-full bg-gray-300 backdrop-blur-md border border-gray-200 shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden animate-slideUp">
+        <div className="w-full bg-fuchsia-300 backdrop-blur-md border border-gray-200 shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden animate-slideUp">
           <div className="flex flex-col lg:flex-row items-center justify-between p-6 lg:p-8 gap-6">
             
             {/* CONTENT SECTION */}

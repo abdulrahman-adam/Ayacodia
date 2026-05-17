@@ -1,5 +1,6 @@
 import React from "react";
 import PartenaireList from "../../components/partenaireList/PartenaireList";
+import ServicesData from "../../components/serviceData/ServiceData";
 
 const Services = () => {
   const services = [
@@ -128,50 +129,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* --- WHY US (LAYOUT MIRACLE) --- */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto rounded-[40px] bg-slate-900 dark:bg-white/5 p-8 sm:p-16 relative overflow-hidden text-center flex flex-col items-center">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none bg-[radial-gradient(circle_at_center,white_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-          
-          <h2 className="relative z-10 text-3xl sm:text-5xl font-black text-white leading-tight">
-            Expériences digitales <span className="text-indigo-400">Premium.</span>
-          </h2>
-          
-          <p className="relative z-10 mt-6 text-slate-300 dark:text-gray-400 text-base max-w-xl">
-            Design élégant, performances foudroyantes et sécurité blindée.
-          </p>
-
-          <div className="relative z-10 mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl">
-            {["Design moderne", "Haute performance", "Responsive mobile", "Support rapide"].map((item, i) => (
-              <div key={i} className="flex items-center justify-center gap-3 p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10">
-                <i className="bi bi-shield-check text-indigo-400 text-xl"></i>
-                <span className="text-white font-semibold text-sm">{item}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16 animate-float">
-             <img src="/logo.png" alt="Logo" className="h-20 sm:h-28 object-contain filter drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]" />
-          </div>
-        </div>
-      </section>
-
-      {/* --- CTA FINAL --- */}
-      <section className="pb-24 px-6">
-        <div className="max-w-5xl mx-auto text-center flex flex-col items-center py-16 sm:py-24 rounded-[40px] bg-gradient-to-br from-indigo-600 to-blue-700 shadow-2xl relative overflow-hidden text-white">
-           <div className="relative z-10 px-6">
-              <h2 className="text-3xl sm:text-5xl font-black mb-6">Prêt à décoller ?</h2>
-              <p className="text-white/80 text-base sm:text-lg max-w-xl mb-10">Créons ensemble la solution qui fera grandir votre business.</p>
-              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <a href="/contact" className="px-10 py-4 bg-white text-indigo-700 rounded-xl font-black text-center transition-transform active:scale-95 shadow-xl">Commencer ici</a>
-                <a href="https://abdulrahman-adam.com" className="px-10 py-4 bg-indigo-500/30 backdrop-blur-md border border-white/20 text-white rounded-xl font-bold text-center">Réalisations</a>
-              </div>
-           </div>
-        </div>
-
-        <PartenaireList />
-      </section>
-
+     <ServicesData />
       <style>{`
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
