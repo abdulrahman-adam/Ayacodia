@@ -39,9 +39,9 @@ export default function ShortContact() {
           {/* Phone */}
           <a
             href="tel:06 51 49 03 77"
-            className="block mt-3 font-bold text-blue-600 dark:text-white hover:text-green-500 underline transition"
+            className="block mt-3 font-bold text-blue-600 dark:text-white hover:text-green-500 transition"
           >
-            <i class="bi bi-telephone-x text-blue-600"></i> 06 51 49 03 77
+            <i class="bi bi-telephone-x text-blue-600"></i> &nbsp;<span className="underline">06 51 49 03 77</span>
           </a>
 
           {/* Divider */}
