@@ -4,6 +4,7 @@ import { assets } from "../../assets/assets";
 import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
 import ThemeToggle from "../themeToggle/ThemeToggle";
+import ShortContact from "../shortContact/ShortContact";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -96,6 +97,8 @@ const Navbar = () => {
             />
             <img src={assets.search_icon} alt="search" className="w-4 h-4 opacity-40 group-focus-within:opacity-100 transition-opacity" />
           </div>
+
+                &nbsp;&nbsp;<ShortContact />
 
           {/* Profile & Login Logic: THE MIRACLE CLICK */}
           <div className="flex items-center">
