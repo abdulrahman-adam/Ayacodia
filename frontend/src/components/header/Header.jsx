@@ -37,113 +37,193 @@ export default function Header() {
 
   return (
     <div className="bg-gray-100 dark:bg-[#020617] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden">
+      <div className="mt-12 flex justify-center">
+        <div className="inline-flex items-center gap-3 px-5 py-2 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-xl text-indigo-600 dark:text-indigo-300 text-xs sm:text-sm font-semibold tracking-widest uppercase animate-slideTop">
+          <span className="w-2 h-2 rounded-full bg-indigo-500 dark:bg-indigo-400 animate-pulse"></span>
+          AYACODIA • Agence Digitale
+        </div>
+      </div>
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* BACKGROUND ANIMATION */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-indigo-500/10 blur-[120px] rounded-full animate-blob"></div>
-          <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-500/10 blur-[120px] rounded-full animate-blob animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-violet-500/10 blur-[120px] rounded-full animate-blob animation-delay-4000"></div>
+      <section className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* LEFT */}
+
+          {/* LEFT (UPDATED TO MATCH RIGHT DESIGN SYSTEM) */}
+<div className="relative flex justify-center items-center w-full animate-fadeUp">
+
+  {/* Glow Effect (same as RIGHT) */}
+  <div className="absolute w-[260px] sm:w-[320px] lg:w-[380px] h-[260px] sm:h-[320px] lg:h-[380px] bg-gradient-to-r from-indigo-500/20 via-blue-500/10 to-violet-500/20 blur-3xl rounded-full animate-pulse"></div>
+
+  {/* Main Card (same structure as RIGHT) */}
+  <div className="relative w-full max-w-md lg:max-w-lg group">
+
+    {/* Gradient Border */}
+    <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-r from-indigo-500 via-blue-500 to-violet-500 opacity-60 blur-sm group-hover:opacity-100 transition duration-500"></div>
+
+    <div className="relative overflow-hidden border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-[#0f172a]/80 backdrop-blur-2xl shadow-[0_10px_60px_rgba(0,0,0,0.15)] p-4 sm:p-6">
+
+      {/* Header (converted to RIGHT style system) */}
+      <div className="flex items-start justify-between gap-4">
+
+        <div>
+          <p className="text-[11px] sm:text-xs uppercase tracking-[3px] text-indigo-500 font-semibold">
+            AYACODIA Identity
+          </p>
+
+          <h3 className="mt-2 text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-tight">
+            Créons votre
+            <span className="block text-indigo-600 dark:text-indigo-400">
+              futur digital ensemble
+            </span>
+          </h3>
+
+          <p className="mt-3 text-sm sm:text-[15px] leading-relaxed text-slate-600 dark:text-gray-400 max-w-sm">
+            Nous accompagnons les entreprises dans la conception de solutions digitales modernes :
+            web, mobile, e-commerce et systèmes intelligents.
+          </p>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* LEFT */}
-          <div className="animate-fadeUp text-center lg:text-left">
-            <div className="inline-flex items-center gap-3 px-5 py-2 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-xl text-indigo-600 dark:text-indigo-300 text-xs sm:text-sm font-semibold tracking-widest uppercase animate-slideTop">
-              <span className="w-2 h-2 rounded-full bg-indigo-500 dark:bg-indigo-400 animate-pulse"></span>
-              AYACODIA • Agence Digitale
-            </div>
+        {/* Icon (same RIGHT style) */}
+        <div className="min-w-[52px] h-[52px] sm:min-w-[60px] sm:h-[60px] rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow-xl">
+          <span className="text-xl sm:text-2xl">🚀</span>
+        </div>
 
-            <h1 className="mt-4 text-3xl sm:text-5xl lg:text-5xl font-black leading-tight tracking-tight text-slate-900 dark:!text-white">
-              <span className="block animate-textReveal">
-                Créons votre
-              </span>
+      </div>
 
-              <span className="block bg-gradient-to-r from-indigo-600 via-blue-600 to-violet-600 dark:from-indigo-400 dark:via-blue-400 dark:to-violet-400 bg-clip-text text-transparent animate-gradientMove bg-[length:200%_200%]">
-                futur digital.
-              </span>
-            </h1>
+      {/* Stats (same RIGHT style system) */}
+      <div className="grid grid-cols-3 gap-3 mt-6">
 
-            <p className="mt-8 text-slate-600 dark:text-gray-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-fadeDelay">
-              AYACODIA accompagne les entreprises avec des solutions digitales
-              modernes : applications web, applications mobiles, plateformes
-              e-commerce et systèmes intelligents.
-            </p>
+        <div className="rounded-2xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-3 sm:p-4 text-center hover:scale-105 transition duration-300">
+          <h4 className="text-lg sm:text-2xl font-black text-indigo-600 dark:text-indigo-400">
+            Vision
+          </h4>
+          <p className="text-[11px] sm:text-xs mt-1 text-slate-500 dark:text-gray-400">
+            Stratégie
+          </p>
+        </div>
 
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5">
-              <a
-                href="/contact"
-                className="w-full sm:w-[249px] text-center bg-gradient-to-r from-indigo-500 via-blue-500 to-violet-600 group relative overflow-hidden px-8 py-5 font-bold text-white transition-all duration-500 shadow-lg shadow-indigo-500/20 hover:scale-105 hover:shadow-[0_15px_40px_rgba(99,102,241,0.45)] animate-btnPop"
-              >
-                <span className="relative z-10">
-                  Démarrer un projet
-                </span>
+        <div className="rounded-2xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-3 sm:p-4 text-center hover:scale-105 transition duration-300">
+          <h4 className="text-lg sm:text-2xl font-black text-blue-600 dark:text-blue-400">
+            Design
+          </h4>
+          <p className="text-[11px] sm:text-xs mt-1 text-slate-500 dark:text-gray-400">
+            UI/UX
+          </p>
+        </div>
 
-                <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12"></span>
-              </a>
+        <div className="rounded-2xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-3 sm:p-4 text-center hover:scale-105 transition duration-300">
+          <h4 className="text-lg sm:text-2xl font-black text-violet-600 dark:text-violet-400">
+            Build
+          </h4>
+          <p className="text-[11px] sm:text-xs mt-1 text-slate-500 dark:text-gray-400">
+            Dev
+          </p>
+        </div>
 
-              <a
-                href="/services"
-                className="w-full sm:w-[249px] text-center px-8 py-5 border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 transition-all duration-500 font-semibold text-slate-700 dark:text-gray-200 hover:scale-105 animate-btnPop2"
-              >
-                Découvrir nos services
-              </a>
-            </div>
+      </div>
 
-            {/* STATS */}
-            <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-5">
-              {stats.map((item, index) => (
-                <div
-                  key={index}
-                  className="rounded-3xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.04] backdrop-blur-xl p-5 hover:-translate-y-2 hover:scale-105 transition-all duration-500 shadow-sm dark:shadow-none animate-cardReveal"
-                  style={{
-                    animationDelay: `${index * 0.2}s`,
-                  }}
-                >
-                  <h3 className="text-3xl font-black text-transparent bg-gradient-to-r from-indigo-600 to-blue-600 dark:from-indigo-400 to-blue-400 bg-clip-text">
-                    {item.number}
-                  </h3>
+      {/* Footer (same RIGHT CTA system) */}
+      <div className="mt-6 flex flex-col sm:flex-row gap-3">
 
-                  <p className="mt-2 text-slate-500 dark:text-gray-400 text-sm">
-                    {item.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <button className="flex-1 py-3 bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-semibold shadow-lg hover:scale-[1.02] transition duration-300">
+          <a href="/partenaire">Devenir Partenaire</a>
+        </button>
+
+        <button className="flex-1 py-3 border border-slate-300 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-white font-semibold hover:bg-slate-200 dark:hover:bg-white/10 transition duration-300">
+          <a href="/about">À propos</a>
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
 
           {/* RIGHT */}
-          <div className="relative animate-fadeRight">
-            <div className="w-full relative border border-slate-200 dark:border-white/10 bg-white/50 dark:bg-white/[0.05] backdrop-blur-2xl p-6 sm:p-8 shadow-xl dark:shadow-[0_20px_80px_rgba(79,70,229,0.2)] hover:scale-[1.01] transition-all duration-700">
-              <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-500/5 dark:bg-indigo-500/10 blur-[120px] rounded-full animate-pulse"></div>
+          <div className="relative flex justify-center items-center w-full animate-fadeLeft">
+            {/* Glow Effect */}
+            <div className="absolute w-[260px] sm:w-[320px] lg:w-[380px] h-[260px] sm:h-[320px] lg:h-[380px] bg-gradient-to-r from-indigo-500/20 via-blue-500/10 to-violet-500/20 blur-3xl rounded-full animate-pulse"></div>
 
-              <img
-                src="/logo.png"
-                alt="AYACODIA"
-                className="relative z-10 w-full max-w-md mx-auto object-contain drop-shadow-2xl dark:drop-shadow-[0_0_35px_rgba(99,102,241,0.4)] animate-float"
-              />
+            {/* Main Card */}
+            <div className="relative w-full max-w-md lg:max-w-lg group">
+              {/* Gradient Border */}
+              <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-r from-indigo-500 via-blue-500 to-violet-500 opacity-60 blur-sm group-hover:opacity-100 transition duration-500"></div>
 
-              <div className="relative z-10 mt-10 grid grid-cols-2 gap-4">
-                {["Performance", "Sécurité", "Responsive", "Innovation"].map(
-                  (item, index) => (
-                    <div
-                      key={index}
-                      className="border border-blue-600 dark:border-white/10 bg-slate-100/50 dark:bg-white/[0.05] p-4 text-center text-sm font-semibold text-slate-700 dark:text-gray-200 hover:bg-slate-200 dark:hover:bg-white/[0.08] transition duration-500 hover:scale-105 animate-serviceMove"
-                      style={{
-                        animationDelay: `${index * 0.25}s`,
-                      }}
-                    >
-                      {item}
-                    </div>
-                  ),
-                )}
+              <div className="relative overflow-hidden border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-[#0f172a]/80 backdrop-blur-2xl shadow-[0_10px_60px_rgba(0,0,0,0.15)] p-4 sm:p-6">
+                {/* Header */}
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-[11px] sm:text-xs uppercase tracking-[3px] text-indigo-500 font-semibold">
+                      Digital Experience
+                    </p>
+
+                    <h3 className="mt-2 text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-tight">
+                      Solutions digitales
+                      <span className="block text-indigo-600 dark:text-indigo-400">
+                        modernes & intelligentes
+                      </span>
+                    </h3>
+
+                    <p className="mt-3 text-sm sm:text-[15px] leading-relaxed text-slate-600 dark:text-gray-400 max-w-sm">
+                      Création de plateformes web, applications mobiles,
+                      systèmes e-commerce et solutions innovantes adaptées aux
+                      entreprises modernes.
+                    </p>
+                  </div>
+
+                  {/* Icon */}
+                  <div className="min-w-[52px] h-[52px] sm:min-w-[60px] sm:h-[60px] rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow-xl">
+                    <span className="text-xl sm:text-2xl">🚀</span>
+                  </div>
+                </div>
+
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-3 mt-6">
+                  <div className="rounded-2xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-3 sm:p-4 text-center hover:scale-105 transition duration-300">
+                    <h4 className="text-lg sm:text-2xl font-black text-indigo-600 dark:text-indigo-400">
+                      +10
+                    </h4>
+                    <p className="text-[11px] sm:text-xs mt-1 text-slate-500 dark:text-gray-400">
+                      Projets
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-3 sm:p-4 text-center hover:scale-105 transition duration-300">
+                    <h4 className="text-lg sm:text-2xl font-black text-blue-600 dark:text-blue-400">
+                      24/7
+                    </h4>
+                    <p className="text-[11px] sm:text-xs mt-1 text-slate-500 dark:text-gray-400">
+                      Support
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-3 sm:p-4 text-center hover:scale-105 transition duration-300">
+                    <h4 className="text-lg sm:text-2xl font-black text-violet-600 dark:text-violet-400">
+                      98%
+                    </h4>
+                    <p className="text-[11px] sm:text-xs mt-1 text-slate-500 dark:text-gray-400">
+                      Satisfaction
+                    </p>
+                  </div>
+                </div>
+
+                {/* Footer */}
+                <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                  <button className="flex-1 py-3 bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-semibold shadow-lg hover:scale-[1.02] transition duration-300">
+                    <a href="/contact">Commencer un projet</a>
+                  </button>
+
+                  <button className="flex-1 py-3 border border-slate-300 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-white font-semibold hover:bg-slate-200 dark:hover:bg-white/10 transition duration-300">
+                    <a href="/services">Voir les services</a>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-<ServicesData />
+      <ServicesData />
       {/* SERVICES */}
       <hr className="border-slate-200 dark:border-white/100" />
 
